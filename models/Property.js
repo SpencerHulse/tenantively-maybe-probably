@@ -10,6 +10,13 @@ Property.init(
             primaryKey: true,
             autoIncrement: true
           },
+        landlord_id: {
+            type: DataTypes.INTEGER,
+            references: {
+                model: 'landlord',
+                key: 'id'
+            }
+        },
         address: {
             type: DataTypes.STRING,
             allowNull: false,
@@ -38,8 +45,6 @@ Property.init(
             type: DataTypes.TEXT,
             allowNull: false
         }
-            
-        
      },
      {
         sequelize,
