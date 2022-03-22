@@ -14,6 +14,7 @@ Property.hasOne(Amenities, {
   foreignKey: "property_id",
 });
 
+// On delete cascade?
 Amenities.belongsTo(Property, {
   foreignKey: "property_id",
 });
