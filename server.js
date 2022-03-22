@@ -35,6 +35,7 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use(session(sess));
 
 // Routes
+app.use(require("./controllers/index"));
 
 // Database and Server
 const PORT = process.env.PORT || 3001;
