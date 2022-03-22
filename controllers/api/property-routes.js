@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { Property } = require("../../models");
+const { Property, Amenities } = require("../../models");
 
 // Find all properties - /api/properties
 router.get("/", (req, res) => {
@@ -13,7 +13,13 @@ router.get("/", (req, res) => {
 
 // Find a single property - /api/properties/:id
 router.get("/:id", (req, res) => {
-  Property.findOne({ where: { id: req.params.id } })
+  Property.findOne({
+    where: { id: req.params.id },
+    include: {
+      model: Amenities,
+      attributes: ["id", "laundry", "pets", "pool", "parking"],
+    },
+  })
     .then((data) => {
       if (!data) {
         res.status(404).json({ message: "No property found with this ID!" });

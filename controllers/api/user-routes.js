@@ -4,7 +4,9 @@ const { User, Property, Amenities } = require("../../models");
 // Get all users (eventually, exclude password attribute) - /api/users
 // Shows users, their properties, and the amenities of those properties
 router.get("/", (req, res) => {
-  User.findAll()
+  User.findAll({
+    attributes: { exclude: ["password"] },
+  })
     .then((data) => res.status(200).json(data))
     .catch((err) => {
       console.log(err);
@@ -15,7 +17,28 @@ router.get("/", (req, res) => {
 // Get single user (eventually, exclude password attribute) - /api/users/:id
 // Shows a user, their properties, and the amenities of those properties
 router.get("/:id", (req, res) => {
-  User.findOne({ where: { id: req.params.id } })
+  User.findOne({
+    where: { id: req.params.id },
+    attributes: { exclude: ["password"] },
+    include: {
+      model: Property,
+      attributes: [
+        "id",
+        "address",
+        "zip_code",
+        "bedrooms",
+        "bathrooms",
+        "monthly_rent",
+        "square_feet",
+        "description",
+        "availability",
+      ],
+      include: {
+        model: Amenities,
+        attributes: ["id", "laundry", "pets", "pool", "parking"],
+      },
+    },
+  })
     .then((data) => {
       if (!data) {
         res.status(404).json({ message: "No user found with this ID!" });
