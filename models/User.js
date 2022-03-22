@@ -37,7 +37,8 @@ User.init(
       },
     },
     phone: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.BIGINT,
+      allowNull: false,
       validate: {
         isNumeric: true,
       },
