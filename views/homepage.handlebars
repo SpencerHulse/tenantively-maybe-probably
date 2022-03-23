@@ -1,1 +1,7 @@
-{{> partial-test}}
+<div class="container">
+    {{#each properties as |property|}}
+      <div class="row mt-5">
+    {{> property-info property}}
+      </div>
+      {{/each}}
+    </div>
