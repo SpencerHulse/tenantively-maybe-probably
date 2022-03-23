@@ -38,10 +38,6 @@ Landlord.init(
           len: [4]
         }
       },
-      property_id: {
-          type: DataTypes.INTEGER,
-          allowNull: false
-      }
     },
       {
         hooks: {

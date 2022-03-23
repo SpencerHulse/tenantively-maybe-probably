@@ -30,8 +30,9 @@ Property.init(
             allowNull: false,
         },
         bathrooms: {
-            type: DataTypes.INTEGER,
+            type: DataTypes.DECIMAL(10, 1),
             allowNull: false,
+
         },
         rent: {
             type: DataTypes.DECIMAL,
