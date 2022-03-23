@@ -1,0 +1,37 @@
+* {
+    color: #0C4279;
+}
+
+a {
+    text-decoration: none;
+    color: #0C4279;
+}
+
+.jumbotron {
+    background-image: url(../images/rooftops.jpg);
+    background-size: cover;
+    background-position: bottom;
+    color: #0C4279;
+    min-height: 450px;
+    padding-top: 20px;
+}
+
+.nav-container { 
+    color: #0C4279;
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 5vw;
+}
+
+.brand {
+    font-size: 30px;
+}
+
+.btn {
+    background-color: #0C4279;
+    color: white;
+}
+
+.btn:hover {
+    background-color: #6D8EAF;
+}
