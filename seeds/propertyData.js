@@ -34,6 +34,17 @@ const propertyData = [
     description: "A big classy place.",
     availability: "Now",
   },
+  {
+    user_id: 2,
+    address: "2000 Come Inside Street",
+    zip_code: 11111,
+    bedrooms: 15,
+    bathrooms: 6,
+    monthly_rent: 5000,
+    square_feet: 10000,
+    description: "A sketchy yet inviting compound",
+    availability: "Now",
+  }
 ];
 
 const seedProperties = () => Property.bulkCreate(propertyData);

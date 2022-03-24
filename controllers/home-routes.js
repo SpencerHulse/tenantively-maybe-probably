@@ -7,7 +7,10 @@ router.get("/", (req, res) => {
     attributes: [
       'id',
       'address',
-      'description'
+      'description',
+      'bedrooms',
+      'bathrooms',
+      'monthly_rent'
     ]
   })
   .then(data => {

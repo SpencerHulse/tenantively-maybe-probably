@@ -1,7 +1,9 @@
 <div class="container">
+      <div class="row mt-5 justify-content-between">
     {{#each properties as |property|}}
-      <div class="row mt-5">
+          <div class="col-lg-4">
     {{> property-info property}}
-      </div>
+          </div>
       {{/each}}
+      </div>
     </div>
