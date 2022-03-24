@@ -39,3 +39,7 @@ a {
 .content-item {
   font-weight: bold;
 }
+
+.card {
+  padding: 20px;
+}
