@@ -1,0 +1,54 @@
+* {
+  color: #0c4279;
+}
+
+a {
+  text-decoration: none;
+  color: #0c4279;
+}
+
+.jumbotron {
+  background-image: url(../images/rooftops.jpg);
+  background-size: cover;
+  background-position: bottom;
+  color: #0c4279;
+  min-height: 450px;
+  padding-top: 20px;
+}
+
+.header {
+  background-image: url(../images/header.jpg);
+  background-size: cover;
+  background-position: bottom;
+  color: #0c4279;
+  min-height: 450px;
+  padding-top: 20px;
+}
+
+.nav-container {
+  color: #0c4279;
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 5vw;
+}
+
+.brand {
+  font-size: 30px;
+}
+
+.btn {
+  background-color: #0c4279;
+  color: white;
+}
+
+.btn:hover {
+  background-color: #6d8eaf;
+}
+
+.content-item {
+  font-weight: bold;
+}
+
+.card {
+  padding: 20px;
+}
