@@ -1,0 +1,71 @@
+{{> header}}
+
+<div class="container">
+    <div class="row gx-5">
+        <div class="col mt-5">
+            <div class="row">
+                <h2>Add a property</h2>
+            </div>
+            <form action="submit" class="login-form">
+                <div class="row">
+                    <div class="col-8">
+                        <div class="mb-3">
+                            <label for="property-address" class="form-label">Street address</label>
+                            <input type="text" class="form-control" id="property-address">
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="mb-3">
+                            <label for="property-zipcode" class="form-label">Zip Code</label>
+                            <input type="text" class="form-control" id="property-zipcode">
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="property-squarefootage" class="form-label">Square footage</label>
+                    <input type="number" class="form-control" id="property-squarefootage">
+                </div>
+                <div class="mb-3">
+                    <label for="property-monthlyrent" class="form-label">Monthly rent</label>
+                    <input type="number" class="form-control" id="property-monthlyrent">
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div class="mb-3">
+                            <label for="property-bedrooms" class="form-label">Bedrooms</label>
+                            <select class="form-control" id="property-bedrooms">
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="mb-3">
+                            <label for="property-bathrooms" class="form-label">Bathrooms</label>
+                            <select class="form-control" id="property-bathrooms">
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="property-availability" class="form-label">Availability</label>
+                    <input type="text" class="form-control" id="property-availability">
+                </div>
+                <div class="mb-3">
+                    <label for="property-description" class="form-label">Description</label>
+                    <textarea id="property-description" cols="30" rows="10" class="form-control"></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Add property</button>
+            </form>
+        </div>
+    </div>
+</div>
