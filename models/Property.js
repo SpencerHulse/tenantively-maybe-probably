@@ -50,6 +50,10 @@ Property.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
+    property_type: {
+      type: DataTypes.STRING,
+      allowNull: false
+    }
   },
   {
     sequelize,

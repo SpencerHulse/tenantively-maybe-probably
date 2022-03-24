@@ -1,0 +1,28 @@
+{{> header}}
+
+<div class="container">
+    <div class="row mt-3">
+        <h2>{{properties.address}}</h2>
+        <p>{{properties.property_type}} with {{properties.bedrooms}} bedrooms and {{properties.bathrooms}} bathrooms</p>
+    </div>
+    <div class="row mt-3">
+        <div class="col">
+            <img src="https://placedog.net/500" alt="" srcset="">
+        </div>
+        <div class="col">
+            <h3>At a glance</h3>
+            <ul>
+                <li>Monthly rent: <strong>${{properties.monthly_rent}}</strong></li>
+                <li>Bedrooms: {{properties.bedrooms}}</li>
+                <li>Bathrooms: {{properties.bathrooms}}</li>
+                {{#if properties.amenity.pets}}
+                <li>Pets allowed</li>
+                {{/if}}
+                <li>{{properties.amenity.parking}}</li>
+            </ul>
+        </div>
+    </div>
+    <div class="row mt-3">
+        <p>{{properties.description}}</p>
+    </div>
+</div>
