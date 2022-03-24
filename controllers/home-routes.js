@@ -65,4 +65,8 @@ router.get("/property/:id", (req, res) => {
   })
 });
 
+router.get("/add-property", (req, res) => {
+  res.render("add-property");
+});
+
 module.exports = router;
