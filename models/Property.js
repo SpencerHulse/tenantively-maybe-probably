@@ -31,7 +31,7 @@ Property.init(
       allowNull: false,
     },
     bathrooms: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.DECIMAL,
       allowNull: false,
     },
     monthly_rent: {
@@ -50,6 +50,10 @@ Property.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
+    property_type: {
+      type: DataTypes.STRING,
+      allowNull: false
+    }
   },
   {
     sequelize,

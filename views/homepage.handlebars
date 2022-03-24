@@ -1,9 +1,12 @@
+{{> home-jumbotron}}
+
 <div class="container">
       <div class="row mt-5 justify-content-between">
-    {{#each properties as |property|}}
-          <div class="col-lg-4">
-    {{> property-home property}}
-          </div>
-      {{/each}}
+            <h2>All listings</h2>
+            {{#each properties as |property|}}
+            <div class="col-lg-4">
+                  {{> property-info property}}
+            </div>
+            {{/each}}
       </div>
-    </div>
+</div>

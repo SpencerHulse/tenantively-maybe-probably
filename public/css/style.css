@@ -16,6 +16,15 @@ a {
   padding-top: 20px;
 }
 
+.header {
+  background-image: url(../images/header.jpg);
+  background-size: cover;
+  background-position: bottom;
+  color: #0c4279;
+  min-height: 450px;
+  padding-top: 20px;
+}
+
 .nav-container {
   color: #0c4279;
   display: flex;
@@ -38,4 +47,8 @@ a {
 
 .content-item {
   font-weight: bold;
+}
+
+.card {
+  padding: 20px;
 }
