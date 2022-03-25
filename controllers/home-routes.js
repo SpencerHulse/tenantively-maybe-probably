@@ -1,6 +1,9 @@
 const router = require("express").Router();
 const sequelize = require('../config/connection');
 const { Property, User, Amenities } = require('../models')
+var Handlebars = require("handlebars");
+var MomentHandler = require("handlebars.moment");
+MomentHandler.registerHelpers(Handlebars);
 
 router.get("/", (req, res) => {
   Property.findAll({
@@ -33,8 +36,15 @@ router.get("/dashboard/:id", (req, res) => {
       'bathrooms',
       'monthly_rent',
       'property_type',
-      'availability'
-    ]
+      'availability',
+      'zip_code',
+      'square_feet',
+      'created_at'
+    ],
+    include: {
+      model: Amenities,
+      attributes: ["id", "laundry", "pets", "pool", "parking"],
+    }
   })
   .then(data => {
     const properties = data.map(property => property.get({ plain: true }));
@@ -68,5 +78,6 @@ router.get("/property/:id", (req, res) => {
 router.get("/add-property", (req, res) => {
   res.render("add-property");
 });
+
 
 module.exports = router;
