@@ -1,0 +1,14 @@
+{{> home-jumbotron}}
+
+<h1 class="text-center mt-5 mb-5">Upload Image</h1>
+<form method="POST" action="/upload" enctype="multipart/form-data">
+  <input type="file" name="image" />
+  <input type="submit" id="image-submit-btn" />
+</form>
+
+{{!-- How images are accessed when they are in the bucket --}}
+<img
+  src="https://tenantively-images.s3.amazonaws.com/
+{{properties.property_image}}"
+  alt=""
+/>

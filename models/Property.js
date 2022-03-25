@@ -52,8 +52,12 @@ Property.init(
     },
     property_type: {
       type: DataTypes.STRING,
-      allowNull: false
-    }
+      allowNull: false,
+    },
+    property_image: {
+      type: DataTypes.STRING,
+      defaultValue: "default-image.webp",
+    },
   },
   {
     sequelize,
