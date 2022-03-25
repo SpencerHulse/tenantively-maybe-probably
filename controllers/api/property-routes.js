@@ -46,6 +46,7 @@ router.post("/", (req, res) => {
     square_feet: req.body.square_feet,
     description: req.body.description,
     availability: req.body.availability,
+    property_type: req.body.property_type,
   })
     .then((data) => res.status(200).json(data))
     .catch((err) => {
