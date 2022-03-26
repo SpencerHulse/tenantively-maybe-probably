@@ -1,5 +1,6 @@
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");
+var moment = require('moment');
 
 class Property extends Model {}
 
@@ -31,7 +32,7 @@ Property.init(
       allowNull: false,
     },
     bathrooms: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.DECIMAL,
       allowNull: false,
     },
     monthly_rent: {
@@ -57,7 +58,7 @@ Property.init(
   },
   {
     sequelize,
-    timestamps: false,
+    timestamps: true,
     freezeTableName: true,
     underscored: true,
     modelName: "property",
