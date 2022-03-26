@@ -20,6 +20,28 @@ router.get("/", (req, res) => {
   })
 });
 
+router.get("/dashboard/:id", (req, res) => {
+  Property.findAll({
+    where: {
+      user_id: 1
+    },
+    attributes: [
+      'id',
+      'address',
+      'description',
+      'bedrooms',
+      'bathrooms',
+      'monthly_rent',
+      'property_type',
+      'availability'
+    ]
+  })
+  .then(data => {
+    const properties = data.map(property => property.get({ plain: true }));
+  res.render("dashboard", { properties } );
+  })
+})
+
 router.get("/property/:id", (req, res) => {
   Property.findOne({
     where: { id: req.params.id },

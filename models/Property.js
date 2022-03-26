@@ -31,7 +31,7 @@ Property.init(
       allowNull: false,
     },
     bathrooms: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.DECIMAL,
       allowNull: false,
     },
     monthly_rent: {
@@ -57,7 +57,7 @@ Property.init(
   },
   {
     sequelize,
-    timestamps: false,
+    timestamps: true,
     freezeTableName: true,
     underscored: true,
     modelName: "property",
