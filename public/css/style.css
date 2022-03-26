@@ -64,13 +64,76 @@ a {
 .dash-menu {
   padding: 8px 8px;
   margin-top: 20px;
+  margin-bottom: 20px;
   background-color: #0c4279;
 }
 
-.userdetails {
+.navigation {
+  color: white;
+  padding-left: 5px;
+  font-size: 14px;
+}
+
+.dropdown-toggle {
+  border: none;
+  letter-spacing: 2px;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+.dash-card {
   border: 1px solid #D8D8D8;
+  border-radius: 10px;
+  overflow: hidden;
 }
 
 .logo {
   width: 35px;
+}
+
+.dash-card-title {
+  background-color: #F7F7F7;
+}
+
+.dash-card-title h2 {
+  font-size: 18px;
+  font-weight: 650;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  padding: 13px;
+}
+
+.dash-card-content {
+  padding: 13px;
+}
+
+.property-thumbnail {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+}
+
+.dash-card-content .list-group-item {
+  padding: 10px;
+}
+
+.dash-card-content p {
+  margin: 0px;
+  padding: 0px;
+}
+
+.dash-card-content .list-group-item h3 {
+  font-size: 20px;
+}
+
+.plan-icon {
+  width: 100px;
+  margin-bottom: 10px;
+}
+
+.plan-overview {
+  text-align: center;
+}
+
+.plan-details {
 }
