@@ -1,35 +1,34 @@
+<a href="#INSERTPROPERTYLINKHERE" class="list-group-item list-group-item-action flex-column align-items-start">
+                                    <div class="d-flex w-100">
+                                        <img class="property-thumbnail" src="https://place-puppy.com/50x50">
+                                        <div class="col-3" >
+                                            <h3 class="mb-1">{{address}}</h5>
+                                                <p><strong>Rent:</strong> <span class="property-rent">$ {{monthly_rent}}</span></p>
+                                                <p><strong>Last updated on:</strong> {{updated_at}}</p>
 
-
-
-<div class="col-12 d-flex border">
-    <div>
-    <img src="https://placedog.net/500" alt="rooftop">
-        <div class="d-flex">
-        <p class="d-flex align-items-center">Posted on: {{moment date=d format="DD/MM/YYYY"}}</p>
-        <p><a class="btn" href="/{{id}}" role="button">Edit details &raquo;</a></p>
-        </div>
-    </div>
-    <div class="align-items-center">
-        <h3 class="border-bottom text-center">Details</h3>
-        <p>Address: {{address}}</p>
-        <p>Zip Code: {{zip_code}}</p>
-        <p>Bed/Bath: {{bedrooms}}/{{bathrooms}}</p>
-        <p>Square Feet: {{square_feet}}</p>
-        <p>Description: {{description}}</p>
-        <p>Property Type: {{property_type}} </p>
-        <p>Availability: {{availability}}</p>
-    </div>
-    <div class="pl-5 border">
-        <h3 class="border-bottom text-center">Amenities</h3>
-        {{#if amenity.pets}}
-                <li>Pets allowed</li>
-                {{/if}}
-                {{#if amenity.pool}}
-                <li>Access to a pool</li>
-                {{/if}}
-                {{#if amenity.laundry}}
-                <li>Laundry room on premises</li>
-                {{/if}}
-                <li>{{amenity.parking}}</li>
-    </div>
-</div>
+                                        </div>
+                                        <div class="col-3 mt-4">
+                                            <p><strong>Bed/Bath:</strong> {{bedrooms}}/{{bathrooms}}</p>
+                                            <p><strong>Square Feet:</strong> {{square_feet}}</p>
+                                        </div>
+                                        <div class="col-3 mt-4">
+                                            <p><strong>Property Type:</strong> {{property_type}} </p>
+                                            <p><strong>Availability:</strong> {{availability}}</p>
+                                        </div>
+                                        <div class="col-3">
+                                                <h3 class="mb-1">Amenities</h3>
+                                                {{#if amenity.pets}}
+                                                <li>Pets allowed</li>
+                                                {{/if}}
+                                                {{#if amenity.pool}}
+                                                <li>Access to a pool</li>
+                                                {{/if}}
+                                                {{#if amenity.laundry}}
+                                                <li>Laundry room on premises</li>
+                                                {{/if}}
+                                                <li>{{amenity.parking}}</li>
+                                            
+                                        </div>
+                                    </div>
+                                </a>
+    

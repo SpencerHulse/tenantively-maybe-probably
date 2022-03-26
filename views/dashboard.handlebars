@@ -10,26 +10,123 @@
     <title>Tenantive.ly</title>
 </head>
 
-<body>
-    <!-- jumbotron -->
-    {{> header}}
-    <div class="container">
-      <h1>My Properties</h1>
-    </div>
-    <div class="container ">
-      <div class="row flex">
-        {{#each properties as |property|}}
-        {{> property-dashboard}}
-        {{/each}}
-      </div>
-    </div>
+<body style="background-color: E9EFF4;">
 
-       
-          <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-          <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
-          <script src="../../assets/js/vendor/popper.min.js"></script>
-          <script src="../../dist/js/bootstrap.min.js"></script>
-        
+    <main role="main">
+
+        <div class="row">
+            <div class="col">
+                <div class="container dash-menu d-flex">
+
+                    <a href="./index.html">
+                        <img class="logo" src="./images/tenantively-icon-white.png" alt="">
+                    </a>
+
+                    <div class="navigation dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            DASHBOARD
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="#">Home</a>
+                            <a class="dropdown-item" href="#">My Properties</a>
+                            <a class="dropdown-item" href="#">User Details</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col mt-4">
+                    <h1>Hi {{username}}!</h1>
+                    <ul>
+                        <li>You have <strong>5 properties</strong>.</li>
+                        <li>4 of your properites are houses</li>
+                        <li>Together, they generate a total of <strong>$ 6500</strong>.</li>
+                    </ul>
+                    <p>Thank you for being a part of the Tenantive.ly community.</p>
+                </div>
+                <div class="col-md-7 col-s-12 mt-4">
+                    <div class="dash-card">
+                        <div class="dash-card-title d-flex justify-content-between align-items-center">
+                            <h2>Plan Details</h1>
+                            <a href="">Edit</a>
+                        </div>
+                        <div class="dash-card-content">
+                            <div class="row">
+                                <div class="col plan-overview">
+                                    <div>
+                                        <img class="plan-icon" src="./images/tenantively-icon-dark.png" alt="">
+                                        <h3 class="text-center">PRO</h3>
+                                        <p>You are on the <strong>PRO</strong> plan <br> with billing from <strong>rent revenue</strong>.</p>
+                                    </div>
+                                </div>
+                                <div class="col plan-details">
+                                    <table class="table table-sm">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">Description</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>3 listings $90/month</td>
+                                                <th>$ 270.00</th>
+                                            </tr>
+                                            <tr>
+                                                <td>2 open listings $20/month</td>
+                                                <th>$ 60.00</th>
+                                            </tr>
+                                            <tr>
+                                                <td>PRO Plan $30/month</td>
+                                                <th>$ 30.00</th>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <h3 class="text-right">TOTAL: $ 360.00</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col mt-4">
+                    <div class="dash-card">
+                        <div class="dash-card-title d-flex justify-content-between align-items-center">
+                            <h2>My Properties</h1>
+                            <a href="">+ New</a>
+                        </div>
+                        <div class="dash-card-content">
+                            <div class="my-properties list-group">
+                                <!-- List item -->
+                                {{#each properties as |property|}}
+                                {{>property-dashboard property}}
+                                {{/each}}
+                                <!-- end of list item -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+
+
+
+    </main>
+
+    <footer class="container">
+        <p>&copy; Tenantive.ly 2022</p>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.1/js/bootstrap.min.js" integrity="sha512-UR25UO94eTnCVwjbXozyeVd6ZqpaAE9naiEUBK/A+QDbfSTQFhPGj5lOR6d8tsgbBk84Ggb5A3EkjsOgPRPcKA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </body>
 
 </html>

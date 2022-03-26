@@ -39,12 +39,19 @@ router.get("/dashboard/:id", (req, res) => {
       'availability',
       'zip_code',
       'square_feet',
-      'created_at'
+      'created_at',
+      'monthly_rent'
     ],
-    include: {
+    include: [
+    {
       model: Amenities,
       attributes: ["id", "laundry", "pets", "pool", "parking"],
+    },
+    {
+      model: User,
+      attributes: ['id', 'username']
     }
+  ]
   })
   .then(data => {
     const properties = data.map(property => property.get({ plain: true }));
