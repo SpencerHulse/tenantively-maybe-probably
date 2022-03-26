@@ -29,7 +29,10 @@ a {
   color: #0c4279;
   display: flex;
   justify-content: space-between;
-  padding-bottom: 5vw;
+  margin-bottom: 5vw;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.65);
 }
 
 .brand {
@@ -51,4 +54,9 @@ a {
 
 .card {
   padding: 20px;
+    background-color: #6D8EAF;
+}
+
+.login-container {
+    max-width: 400px;
 }
