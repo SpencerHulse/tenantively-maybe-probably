@@ -1,0 +1,46 @@
+{{!-- The smaller header --}}
+{{> header}}
+{{!-- Form to login to a user account --}}
+<div class="container">
+  <div class="row gx-5">
+    <div class="col-md-4 col-sm-12 mt-5">
+      <div class="row">
+        <h2>Login</h2>
+      </div>
+      <form action="submit" id="login-form">
+        <div class="mb-3">
+          <label for="login-email" class="form-label">Email address</label>
+          <input
+            type="email"
+            class="form-control"
+            id="login-email"
+            aria-describedby="emailHelp"
+          />
+          <div id="emailHelp" class="form-text">We'll never share your email
+            with anyone else.</div>
+        </div>
+        <div class="mb-3">
+          <label for="login-password" class="form-label">Password</label>
+          <input
+            type="password"
+            class="form-control"
+            id="login-password"
+          />
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+    {{!-- Switch to the sign up page --}}
+    <div class="col-md-8 col-sm-12 mt-5 mb-5">
+      <div class="row">
+        <h2>Don't have an account?</h2>
+        <p>Property management has never been easier. Sign up for free!</p>
+      </div>
+      <a href="/signup">
+        <button class="btn btn-primary">Sign Up</button>
+      </a>
+    </div>
+  </div>
+</div>
+
+<script src="/js/login.js"></script>

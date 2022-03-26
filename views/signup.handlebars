@@ -1,0 +1,62 @@
+{{!-- The smaller header --}}
+{{> header}}
+{{!-- Form to create a user account --}}
+<div class="container">
+  <div class="row gx-5">
+    <div class="col-md-4 col-sm-12 mt-5">
+      <div class="row">
+        <h2>Sign Up</h2>
+      </div>
+      <form action="submit" id="sign-up-form">
+        <div class="mb-3">
+          <label for="sign-up-username" class="form-label">Username</label>
+          <input
+            type="username"
+            class="form-control"
+            id="sign-up-username"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="sign-up-email" class="form-label">Email address</label>
+          <input
+            type="email"
+            class="form-control"
+            id="sign-up-email"
+            aria-describedby="emailHelp"
+          />
+          <div id="emailHelp" class="form-text">We'll never share your email
+            with anyone else.</div>
+        </div>
+        <div class="mb-3">
+          <label for="sign-up-phone" class="form-label">Phone Number</label>
+          <input
+            type="phone"
+            class="form-control"
+            id="sign-up-phone"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="sign-up-password" class="form-label">Password</label>
+          <input
+            type="password"
+            class="form-control"
+            id="sign-up-password"
+          />
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+    {{!-- Switch to the login page --}}
+    <div class="col-md-8 col-sm-12 mt-5 mb-5">
+      <div class="row">
+        <h2>Already have an account?</h2>
+        <p>Login and manage your properties with ease!</p>
+      </div>
+      <a href="/login">
+        <button class="btn btn-primary">Login</button>
+      </a>
+    </div>
+  </div>
+</div>
+
+<script src="/js/sign-up.js"></script>

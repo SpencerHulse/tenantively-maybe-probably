@@ -1,9 +1,11 @@
 const router = require("express").Router();
 const sequelize = require("../config/connection");
 const { Property, User, Amenities } = require("../models");
+
+/* The below threw an error:
 var Handlebars = require("handlebars");
 var MomentHandler = require("handlebars.moment");
-MomentHandler.registerHelpers(Handlebars);
+MomentHandler.registerHelpers(Handlebars); */
 
 router.get("/", (req, res) => {
   Property.findAll({
@@ -20,12 +22,20 @@ router.get("/", (req, res) => {
   })
     .then((data) => {
       const properties = data.map((property) => property.get({ plain: true }));
-      res.render("homepage", { properties });
+      res.render("homepage", { properties, loggedIn: req.session.loggedIn });
     })
     .catch((err) => {
       console.log(err);
       res.status(500).json(err);
     });
+});
+
+router.get("/login", (req, res) => {
+  res.render("login");
+});
+
+router.get("/signup", (req, res) => {
+  res.render("signup");
 });
 
 router.get("/dashboard/:id", (req, res) => {

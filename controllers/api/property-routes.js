@@ -1,8 +1,9 @@
 const router = require("express").Router();
 const { Property, Amenities } = require("../../models");
-var Handlebars = require("handlebars");
+
+/* var Handlebars = require("handlebars");
 var MomentHandler = require("handlebars.moment");
-MomentHandler.registerHelpers(Handlebars);
+MomentHandler.registerHelpers(Handlebars); */
 
 // Find all properties - /api/properties
 router.get("/", (req, res) => {
