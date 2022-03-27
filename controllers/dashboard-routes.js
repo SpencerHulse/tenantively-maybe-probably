@@ -41,10 +41,12 @@ router.get("/", withAuth, (req, res) => {
     });
 });
 
+/* Page for Adding a Property */
 router.get("/add-property", withAuth, (req, res) => {
   res.render("add-property", { loggedIn: req.session.loggedIn });
 });
 
+/* Page for a Single Owned Property */
 router.get("/:id", withAuth, (req, res) => {
   Property.findOne({
     where: { id: req.params.id },

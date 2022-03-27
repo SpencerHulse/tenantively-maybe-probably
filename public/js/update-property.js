@@ -1,5 +1,5 @@
 /* Property Info and Amenities Form */
-const updateProperty = document.getElementById("update-property-data");
+const updateProperty = document.getElementById("save-btn");
 
 const updatePropertyHandler = async (event) => {
   event.preventDefault();
@@ -80,4 +80,27 @@ const updatePropertyHandler = async (event) => {
   }
 };
 
-updateProperty.addEventListener("submit", updatePropertyHandler);
+updateProperty.addEventListener("click", updatePropertyHandler);
+
+/* Delete the Property */
+const deleteProperty = document.getElementById("remove-property");
+
+const deletePropertyHandler = async (event) => {
+  event.preventDefault();
+
+  const id = window.location.toString().split("/")[
+    window.location.toString().split("/").length - 1
+  ];
+
+  const response = await fetch(`/api/properties/${id}`, {
+    method: "DELETE",
+  });
+
+  if (response.ok) {
+    window.location.replace("/dashboard");
+  } else {
+    alert(response.statusText);
+  }
+};
+
+deleteProperty.addEventListener("click", deletePropertyHandler);
