@@ -45,6 +45,23 @@ router.post("/", (req, res) => {
     });
 });
 
+// Update amenities using property id /api/amenities
+router.put("/", (req, res) => {
+  Amenities.update(req.body, { where: { property_id: req.body.id } })
+    .then((data) => {
+      if (!data) {
+        res.status(404).json({ message: "No amenities found with this ID!" });
+        return;
+      }
+
+      res.status(200).json({ message: "Amenities successfully updated." });
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
+
 // Update amenities - /api/amenities/:id
 router.put("/:id", (req, res) => {
   Amenities.update(req.body, {

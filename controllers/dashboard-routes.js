@@ -20,6 +20,7 @@ router.get("/", (req, res) => {
       "square_feet",
       "property_image",
       "createdAt",
+      "updatedAt",
     ],
     include: {
       model: Amenities,

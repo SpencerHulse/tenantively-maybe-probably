@@ -35,7 +35,7 @@
           <h2>Property Details</h2>
         </div>
         <div class="dash-card-content">
-          <form action="submit" class="login-form">
+          <form action="submit" class="login-form" id="update-property-data">
             <div class="row">
               <div class="col-8">
                 <div class="mb-3">
@@ -135,10 +135,10 @@
               role="group"
               aria-label="Basic checkbox toggle button group"
             >
-              <input type="checkbox" class="btn-check" id="property-landry-room"
+              <input type="checkbox" class="btn-check" id="property-laundry-room"
               autocomplete="off" {{#if
               property.amenity.laundry}}checked="true"{{/if}}>
-              <label class="btn btn-outline-primary" for="property-landry-room"
+              <label class="btn btn-outline-primary" for="property-laundry-room"
                 >Laundry room</label
               >
 
@@ -186,3 +186,5 @@
     </div>
   </div>
 </div>
+
+<script src="/js/update-property.js"></script>

@@ -6,9 +6,15 @@
     />
     <div class="d-flex">
       <p class="d-flex align-items-center">Posted on:
-        {{format_date createdAt}}</p>
-      <p><a class="btn" href="/dashboard/{{id}}" role="button">Edit details
-          &raquo;</a></p>
+        {{format_date createdAt}}
+      </p>
+      <p class="d-flex align-items-center">Updated on:
+        {{format_date updatedAt}}
+      </p>
+      <p>
+        <a class="btn" href="/dashboard/{{id}}" role="button">Edit details
+          &raquo;</a>
+      </p>
     </div>
   </div>
   <div class="align-items-center">
