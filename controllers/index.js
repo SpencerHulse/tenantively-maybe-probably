@@ -2,8 +2,9 @@ const router = require("express").Router();
 const homeRoutes = require("./home-routes");
 const apiRoutes = require("./api");
 const imageRoutes = require("./upload-routes");
-var moment = require("moment");
+const dashboardRoutes = require("./dashboard-routes");
 
+router.use("/dashboard", dashboardRoutes);
 router.use("/upload", imageRoutes);
 router.use("/api", apiRoutes);
 router.use("/", homeRoutes);

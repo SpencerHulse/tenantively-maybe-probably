@@ -7,6 +7,7 @@ var Handlebars = require("handlebars");
 var MomentHandler = require("handlebars.moment");
 MomentHandler.registerHelpers(Handlebars); */
 
+/* Homepage */
 router.get("/", (req, res) => {
   Property.findAll({
     attributes: [
@@ -30,6 +31,7 @@ router.get("/", (req, res) => {
     });
 });
 
+/* Login page */
 router.get("/login", (req, res) => {
   if (req.session.loggedIn) {
     res.redirect("/");
@@ -39,6 +41,7 @@ router.get("/login", (req, res) => {
   res.render("login");
 });
 
+/* Sign up page */
 router.get("/signup", (req, res) => {
   if (req.session.loggedIn) {
     res.redirect("/");
@@ -48,34 +51,7 @@ router.get("/signup", (req, res) => {
   res.render("signup");
 });
 
-router.get("/dashboard/:id", (req, res) => {
-  Property.findAll({
-    where: {
-      user_id: 1,
-    },
-    attributes: [
-      "id",
-      "address",
-      "description",
-      "bedrooms",
-      "bathrooms",
-      "monthly_rent",
-      "property_type",
-      "availability",
-      "zip_code",
-      "square_feet",
-      "created_at",
-    ],
-    include: {
-      model: Amenities,
-      attributes: ["id", "laundry", "pets", "pool", "parking"],
-    },
-  }).then((data) => {
-    const properties = data.map((property) => property.get({ plain: true }));
-    res.render("dashboard", { properties, loggedIn: req.session.loggedIn });
-  });
-});
-
+/* Single property page */
 router.get("/property/:id", (req, res) => {
   Property.findOne({
     where: { id: req.params.id },
@@ -107,6 +83,7 @@ router.get("/property/:id", (req, res) => {
     });
 });
 
+/* Add property placeholder */
 router.get("/add-property", (req, res) => {
   res.render("add-property");
 });

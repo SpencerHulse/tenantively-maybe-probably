@@ -1,35 +1,36 @@
-
-
-
 <div class="col-12 d-flex border">
-    <div>
-    <img src="https://placedog.net/500" alt="rooftop">
-        <div class="d-flex">
-        <p class="d-flex align-items-center">Posted on: {{moment date=d format="DD/MM/YYYY"}}</p>
-        <p><a class="btn" href="/{{id}}" role="button">Edit details &raquo;</a></p>
-        </div>
+  <div>
+    <img
+      src="https://tenantively-images.s3.amazonaws.com/{{property_image}}"
+      alt="An image of the house at {{address}}"
+    />
+    <div class="d-flex">
+      <p class="d-flex align-items-center">Posted on:
+        {{moment date=d format="DD/MM/YYYY"}}</p>
+      <p><a class="btn" href="/{{id}}" role="button">Edit details &raquo;</a></p>
     </div>
-    <div class="align-items-center">
-        <h3 class="border-bottom text-center">Details</h3>
-        <p>Address: {{address}}</p>
-        <p>Zip Code: {{zip_code}}</p>
-        <p>Bed/Bath: {{bedrooms}}/{{bathrooms}}</p>
-        <p>Square Feet: {{square_feet}}</p>
-        <p>Description: {{description}}</p>
-        <p>Property Type: {{property_type}} </p>
-        <p>Availability: {{availability}}</p>
-    </div>
-    <div class="pl-5 border">
-        <h3 class="border-bottom text-center">Amenities</h3>
-        {{#if amenity.pets}}
-                <li>Pets allowed</li>
-                {{/if}}
-                {{#if amenity.pool}}
-                <li>Access to a pool</li>
-                {{/if}}
-                {{#if amenity.laundry}}
-                <li>Laundry room on premises</li>
-                {{/if}}
-                <li>{{amenity.parking}}</li>
-    </div>
+  </div>
+  <div class="align-items-center">
+    <h3 class="border-bottom text-center">Details</h3>
+    <p>Address: {{address}}</p>
+    <p>Zip Code: {{zip_code}}</p>
+    <p>Bed/Bath: {{bedrooms}}/{{bathrooms}}</p>
+    <p>Square Feet: {{square_feet}}</p>
+    <p>Description: {{description}}</p>
+    <p>Property Type: {{property_type}} </p>
+    <p>Availability: {{availability}}</p>
+  </div>
+  <div class="pl-5 border">
+    <h3 class="border-bottom text-center">Amenities</h3>
+    {{#if amenity.pets}}
+      <li>Pets allowed</li>
+    {{/if}}
+    {{#if amenity.pool}}
+      <li>Access to a pool</li>
+    {{/if}}
+    {{#if amenity.laundry}}
+      <li>Laundry room on premises</li>
+    {{/if}}
+    <li>{{amenity.parking}}</li>
+  </div>
 </div>
