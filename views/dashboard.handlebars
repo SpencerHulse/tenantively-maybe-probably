@@ -74,27 +74,6 @@
                     </p>
                   </div>
                 </div>
-                <div class="col plan-details">
-                  <table class="table table-sm">
-                    <thead>
-                      <tr>
-                        <th scope="col">Description</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>{{properties.length}} listings $90/month</td>
-                        <th> </th>
-                      </tr>
-                      <tr>
-                        <td>PRO Plan $30/month</td>
-                        <th> </th>
-                      </tr>
-                    </tbody>
-                  </table>
-                  {{!-- <h3 class="text-right">TOTAL: $ 360.00</h3> --}}
-                </div>
-              </div>
               <div class="col plan-details">
                 <table class="table table-sm">
                   <thead>
@@ -104,16 +83,17 @@
                   </thead>
                   <tbody>
                     <tr>
-                      <td>{{properties.length}} listings ${{cost_per_month properties.length}}/month</td>
-                      <th> </th>
+                      <td>{{properties.length}} listings $90/month</td>
+                      <th>${{cost_per_month properties.length}}.00</th>
                     </tr>
                     <tr>
                       <td>PRO Plan $30/month</td>
-                      <th> </th>
+                      <th>$30.00</th>
                     </tr>
                   </tbody>
                 </table>
                 {{!-- <h3 class="text-right">TOTAL: $ 360.00</h3> --}}
+              </div>
               </div>
             </div>
           </div>
