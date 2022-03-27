@@ -19,6 +19,7 @@ router.get("/", (req, res) => {
       "zip_code",
       "square_feet",
       "property_image",
+      "createdAt",
     ],
     include: {
       model: Amenities,
