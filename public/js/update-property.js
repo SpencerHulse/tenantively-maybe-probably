@@ -1,3 +1,4 @@
+/* Property Info and Amenities Form */
 const updateProperty = document.getElementById("update-property-data");
 
 const updatePropertyHandler = async (event) => {

@@ -21,8 +21,10 @@
           <div class="row">
             <div class="col">
               <div class="input-group">
-                <input type="file" class="form-control" id="customFile" />
-                <button class="btn">Upload</button>
+                <form class="d-flex w-100 justify-content-between" method="POST" action="/api/upload/{{property.id}}" enctype="multipart/form-data">
+                  <input type="file" class="form-control w-75" id="customFile" name="image" />
+                  <button type="submit" id="image-submit-btn" class="btn">Upload</button>
+                </form>
               </div>
             </div>
           </div>
