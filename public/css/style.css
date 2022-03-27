@@ -54,7 +54,6 @@ a {
 
 .card {
   padding: 20px;
-    background-color: #6D8EAF;
 }
 
 .login-container {
@@ -93,6 +92,31 @@ a {
   width: 35px;
 }
 
+.head-logo {
+  object-fit: contain;
+  width: 200px;
+  /* height: 100px; */
+  overflow: hidden;
+}
+
+.menu-options {
+  padding-top: 31px;
+  padding-bottom: 19px;
+}
+
+.menu-options ul {
+  list-style: none;
+  display: inline-flex;
+  margin-bottom: 0px;
+}
+
+.menu-options ul li {
+  margin-left: 30px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12rem;
+}
+
 .dash-card-title {
   background-color: #F7F7F7;
   padding-right: 15px;
@@ -112,6 +136,35 @@ a {
 
 .dash-card-content {
   padding: 13px;
+}
+
+.dash-card-home-image {
+  padding: 0px;
+  overflow: hidden;
+}
+
+.dash-card-home-image img {
+  height: 250px;
+  object-fit: cover;
+}
+
+.dash-card-badge {
+  position: relative;
+}
+
+.dash-card-rent {
+  font-size: 17px;
+  position: absolute;
+  padding: 7px 15px;
+  border-radius: 0px 0px 15px 0px;
+  border-right: solid 2px white;
+  border-bottom: solid 2px white;
+  top: 0px;
+  display: block;
+  background-color: #86bd4f;
+  color: white;
+  -webkit-box-shadow: 0px 0px 17px 5px rgba(0,0,0,0.27); 
+  box-shadow: 0px 0px 17px 5px rgba(0,0,0,0.27);
 }
 
 .property-thumbnail {
