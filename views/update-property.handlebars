@@ -21,23 +21,37 @@
 
     <div class="row">
       <div class="col">
-        <div class="container dash-menu d-flex">
+        <div class="container dash-menu d-flex justify-content-between">
+          <div class="dash-menu-left d-flex">
 
-          <a href="./index.html">
-            <img class="logo" src="/images/tenantively-icon-white.png" alt="">
-          </a>
+            <a href="/">
+              <img class="logo" src="/images/tenantively-icon-white.png" alt="">
+            </a>
 
-          <div class="navigation dropdown">
-            <a href="/dashboard">
-              <button class="btn btn-secondary back-to-dashboard" type="button">
+            <div class="navigation dropdown">
+              <a href="/dashboard">
+              <button class="btn btn-secondary dash-menu-button">
                 Back to Dashboard
               </button>
+              </a>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="./">Exit Dashboard</a>
+              </div>
+            </div>
+          </div>
+          <div class="dash-menu-right">
+            <div class="navigation dropdown">
+            <a href="/logout">
+              <button class="btn btn-secondary dash-menu-button" type="button" id="dropdownMenuButton"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Log out
+              </button>
             </a>
+            </div>
           </div>
 
         </div>
       </div>
-
 
     </div>
 
