@@ -1,5 +1,6 @@
 const router = require("express").Router();
 const { Property, Amenities } = require("../../models");
+const withAuth = require("../../utils/auth.js");
 
 /* var Handlebars = require("handlebars");
 var MomentHandler = require("handlebars.moment");
@@ -17,7 +18,7 @@ router.get("/", (req, res) => {
 
 // Find the newest property of a user - /api/properties/new-property
 // Used for adding amenities to a property on the same form!
-router.get("/new-property", (req, res) => {
+router.get("/new-property", withAuth, (req, res) => {
   Property.findAll({
     where: { user_id: req.session.user_id },
     order: [["createdAt", "DESC"]],
@@ -61,7 +62,7 @@ router.get("/:id", (req, res) => {
 });
 
 // Add a property - /api/properties
-router.post("/", (req, res) => {
+router.post("/", withAuth, (req, res) => {
   Property.create({
     user_id: req.session.user_id,
     address: req.body.address,
@@ -82,7 +83,7 @@ router.post("/", (req, res) => {
 });
 
 // Update a property - /api/properties/:id
-router.put("/:id", (req, res) => {
+router.put("/:id", withAuth, (req, res) => {
   Property.update(req.body, {
     where: { id: req.params.id },
   })
@@ -101,7 +102,7 @@ router.put("/:id", (req, res) => {
 });
 
 // Delete a property - /api/properties/:id
-router.delete("/:id", (req, res) => {
+router.delete("/:id", withAuth, (req, res) => {
   Property.destroy({ where: { id: req.params.id } })
     .then((data) => {
       if (!data) {

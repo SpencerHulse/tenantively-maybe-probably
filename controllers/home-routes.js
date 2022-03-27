@@ -1,11 +1,5 @@
 const router = require("express").Router();
-const sequelize = require("../config/connection");
-const { Property, User, Amenities } = require("../models");
-
-/* The below threw an error:
-var Handlebars = require("handlebars");
-var MomentHandler = require("handlebars.moment");
-MomentHandler.registerHelpers(Handlebars); */
+const { Property, Amenities } = require("../models");
 
 /* Homepage */
 router.get("/", (req, res) => {
@@ -81,11 +75,6 @@ router.get("/property/:id", (req, res) => {
       console.log(err);
       res.status(500).json(err);
     });
-});
-
-/* Add property placeholder */
-router.get("/add-property", (req, res) => {
-  res.render("add-property");
 });
 
 module.exports = router;
