@@ -21,25 +21,34 @@
 
     <div class="row">
       <div class="col">
-        <div class="container dash-menu d-flex">
+        <div class="container dash-menu d-flex justify-content-between">
+          <div class="dash-menu-left d-flex">
 
-          <a href="./index.html">
-            <img class="logo" src="/images/tenantively-icon-white.png" alt="">
-          </a>
+            <a href="/">
+              <img class="logo" src="/images/tenantively-icon-white.png" alt="">
+            </a>
 
-          <div class="navigation dropdown">
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
-              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              DASHBOARD
-            </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <a class="dropdown-item" href="./">Exit Dashboard</a>
+            <div class="navigation dropdown">
+              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                DASHBOARD
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="./">Exit Dashboard</a>
+              </div>
             </div>
+          </div>
+          <div class="dash-menu-right">
+            <a href="/logout">
+              <button class="btn btn-secondary dash-menu-button" type="button" id="dropdownMenuButton"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Log out
+              </button>
+            </a>
           </div>
 
         </div>
       </div>
-
 
     </div>
 
@@ -74,26 +83,26 @@
                     </p>
                   </div>
                 </div>
-              <div class="col plan-details">
-                <table class="table table-sm">
-                  <thead>
-                    <tr>
-                      <th scope="col">Description</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>{{properties.length}} listings $90/month</td>
-                      <th>${{cost_per_month properties.length}}.00</th>
-                    </tr>
-                    <tr>
-                      <td>PRO Plan $30/month</td>
-                      <th>$30.00</th>
-                    </tr>
-                  </tbody>
-                </table>
-                {{!-- <h3 class="text-right">TOTAL: $ 360.00</h3> --}}
-              </div>
+                <div class="col plan-details">
+                  <table class="table table-sm">
+                    <thead>
+                      <tr>
+                        <th scope="col">Description</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>{{properties.length}} listings $90/month</td>
+                        <th>${{cost_per_month properties.length}}.00</th>
+                      </tr>
+                      <tr>
+                        <td>PRO Plan $30/month</td>
+                        <th>$30.00</th>
+                      </tr>
+                    </tbody>
+                  </table>
+                  {{!-- <h3 class="text-right">TOTAL: $ 360.00</h3> --}}
+                </div>
               </div>
             </div>
           </div>

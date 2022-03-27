@@ -4,14 +4,15 @@
     <div class="container">
       <div class="row">
         <div class="d-flex justify-content-between align-items-center">
+        <a href="/">
           <img class="head-logo" src="/images/tenantively-logo-dark.png" alt="">
-          <div class="d-flex menu-options align-items-center">
+        </a>          <div class="d-flex menu-options align-items-center">
           <ul>
           {{#if loggedIn}}
-            <li>Dashboard</li>
-            <li>Logout</li>
+            <li><a href="/dashboard">Dashboard</a></li>
+            <li><a href="/logout">Logout</a></li>
         {{else}}
-        <li>Log in</li>
+        <li><a href="/login">Log in or Sign Up</a></li>
         {{/if}}
           </ul>
           </div>
