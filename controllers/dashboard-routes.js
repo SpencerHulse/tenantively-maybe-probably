@@ -40,6 +40,10 @@ router.get("/", (req, res) => {
     });
 });
 
+router.get("/add-property", (req, res) => {
+  res.render("add-property", { loggedIn: req.session.loggedIn });
+});
+
 router.get("/:id", (req, res) => {
   Property.findOne({
     where: { id: req.params.id },
@@ -72,10 +76,6 @@ router.get("/:id", (req, res) => {
       console.log(err);
       res.status(500).json(err);
     });
-});
-
-router.get("/add-property", (req, res) => {
-  res.render("add-property");
 });
 
 module.exports = router;
