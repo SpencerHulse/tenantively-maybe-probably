@@ -1,8 +1,9 @@
 const router = require("express").Router();
-const { Property, User, Amenities } = require("../models");
+const { Property, Amenities } = require("../models");
+const withAuth = require("../utils/auth.js");
 
 /* User dashboard */
-router.get("/", (req, res) => {
+router.get("/", withAuth, (req, res) => {
   Property.findAll({
     where: {
       user_id: req.session.user_id,
@@ -40,15 +41,16 @@ router.get("/", (req, res) => {
     });
 });
 
-router.get("/add-property", (req, res) => {
+router.get("/add-property", withAuth, (req, res) => {
   res.render("add-property", { loggedIn: req.session.loggedIn });
 });
 
-router.get("/:id", (req, res) => {
+router.get("/:id", withAuth, (req, res) => {
   Property.findOne({
     where: { id: req.params.id },
     attributes: [
       "id",
+      "user_id",
       "address",
       "description",
       "bedrooms",
@@ -66,6 +68,12 @@ router.get("/:id", (req, res) => {
     },
   })
     .then((data) => {
+      /* Ensures that the user trying to edit the page is the user who owns the property */
+      if (data.dataValues.user_id !== req.session.user_id) {
+        res.redirect("/");
+        return;
+      }
+
       const property = data.get({ plain: true });
       res.render("update-property", {
         property,

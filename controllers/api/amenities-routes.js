@@ -1,5 +1,6 @@
 const router = require("express").Router();
 const { Amenities } = require("../../models");
+const withAuth = require("../../utils/auth.js");
 
 // Find all sets of amenities - /api/amenities
 router.get("/", (req, res) => {
@@ -29,7 +30,7 @@ router.get("/:id", (req, res) => {
 });
 
 // Add amenities - /api/amenities
-router.post("/", (req, res) => {
+router.post("/", withAuth, (req, res) => {
   // Likely updated as more amenities are added
   Amenities.create({
     property_id: req.body.property_id,
@@ -46,7 +47,7 @@ router.post("/", (req, res) => {
 });
 
 // Update amenities using property id /api/amenities
-router.put("/", (req, res) => {
+router.put("/", withAuth, (req, res) => {
   Amenities.update(req.body, { where: { property_id: req.body.id } })
     .then((data) => {
       if (!data) {
@@ -63,7 +64,7 @@ router.put("/", (req, res) => {
 });
 
 // Update amenities - /api/amenities/:id
-router.put("/:id", (req, res) => {
+router.put("/:id", withAuth, (req, res) => {
   Amenities.update(req.body, {
     where: { id: req.params.id },
   })
@@ -83,7 +84,7 @@ router.put("/:id", (req, res) => {
 
 // Delete amenities - /api/amenities/:id
 // Likely this will not be used
-router.delete("/:id", (req, res) => {
+router.delete("/:id", withAuth, (req, res) => {
   Amenities.destroy({ where: { id: req.params.id } })
     .then((data) => {
       if (!data) {

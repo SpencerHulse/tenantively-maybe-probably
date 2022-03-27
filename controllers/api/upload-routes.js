@@ -24,17 +24,6 @@ const upload = multer({ storage: storage });
 
 const { uploadFile, deleteFile } = require("../../public/js/aws-s3.js");
 
-// Just the page, not anything to do with uploading
-router.get("/", (req, res) => {
-  Property.findOne({
-    where: { id: 1 },
-    attributes: ["property_image"],
-  }).then((data) => {
-    const properties = data.get({ plain: true });
-    res.render("upload", { properties });
-  });
-});
-
 router.post("/:id", upload.single("image"), async (req, res) => {
   const file = req.file;
   // Uploads file to s3
