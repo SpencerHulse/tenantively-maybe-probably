@@ -78,10 +78,7 @@ router.post("/:id", upload.single("image"), async (req, res) => {
   })
     .then((data) => {
       const properties = data.map((property) => property.get({ plain: true }));
-      res.render("dashboard", {
-        properties,
-        loggedIn: req.session.loggedIn,
-      });
+      res.redirect("/dashboard");
     })
     .catch((err) => {
       console.log(err);
