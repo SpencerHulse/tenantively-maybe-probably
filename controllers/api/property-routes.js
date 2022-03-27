@@ -15,6 +15,28 @@ router.get("/", (req, res) => {
     });
 });
 
+// Find the newest property of a user - /api/properties/new-property
+// Used for adding amenities to a property on the same form!
+router.get("/new-property", (req, res) => {
+  Property.findAll({
+    where: { user_id: req.session.user_id },
+    order: [["createdAt", "DESC"]],
+    limit: 1,
+  })
+    .then((data) => {
+      if (!data) {
+        res.status(404).json({ message: "No property found with this ID!" });
+        return;
+      }
+
+      res.status(200).json(data);
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
+
 // Find a single property - /api/properties/:id
 router.get("/:id", (req, res) => {
   Property.findOne({
