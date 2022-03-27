@@ -31,10 +31,20 @@ router.get("/", (req, res) => {
 });
 
 router.get("/login", (req, res) => {
+  if (req.session.loggedIn) {
+    res.redirect("/");
+    return;
+  }
+
   res.render("login");
 });
 
 router.get("/signup", (req, res) => {
+  if (req.session.loggedIn) {
+    res.redirect("/");
+    return;
+  }
+
   res.render("signup");
 });
 
@@ -62,7 +72,7 @@ router.get("/dashboard/:id", (req, res) => {
     },
   }).then((data) => {
     const properties = data.map((property) => property.get({ plain: true }));
-    res.render("dashboard", { properties });
+    res.render("dashboard", { properties, loggedIn: req.session.loggedIn });
   });
 });
 
@@ -86,7 +96,10 @@ router.get("/property/:id", (req, res) => {
   })
     .then((data) => {
       const properties = data.get({ plain: true });
-      res.render("single-property", { properties });
+      res.render("single-property", {
+        properties,
+        loggedIn: req.session.loggedIn,
+      });
     })
     .catch((err) => {
       console.log(err);
