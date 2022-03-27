@@ -5,4 +5,8 @@ const format_date = (date) => {
   return `${month}/${day}/${year}`;
 };
 
-module.exports = { format_date };
+const cost_per_month = (listings) => {
+  return listings * 90;
+};
+
+module.exports = { format_date, cost_per_month };
