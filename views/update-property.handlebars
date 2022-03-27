@@ -1,0 +1,188 @@
+{{!-- Smaller header --}}
+{{> header}}
+
+<div class="container">
+  <div class="row">
+    <h1>Editing: {{property.address}}</h1>
+  </div>
+  <div class="row">
+    <div class="col-md-5 col-s-12 mt-4">
+      <div class="dash-card">
+        <div class="dash-card-title d-flex justify-content-between">
+          <h2>Listing photo</h2>
+        </div>
+        <div class="dash-card-content">
+          <div class="row">
+            <img
+              src="https://tenantively-images.s3.amazonaws.com/{{property.property_image}}"
+            />
+          </div>
+          <p class="mt-2 mb-2">Replace photo</p>
+          <div class="row">
+            <div class="col">
+              <div class="input-group">
+                <input type="file" class="form-control" id="customFile" />
+                <button class="btn">Upload</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-7 col-s-12 mt-4">
+      <div class="dash-card">
+        <div class="dash-card-title d-flex justify-content-between">
+          <h2>Property Details</h2>
+        </div>
+        <div class="dash-card-content">
+          <form action="submit" class="login-form">
+            <div class="row">
+              <div class="col-8">
+                <div class="mb-3">
+                  <label for="property-address" class="form-label"
+                    >Street address</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="property-address"
+                    value="{{property.address}}"
+                  />
+                </div>
+              </div>
+              <div class="col-4">
+                <div class="mb-3">
+                  <label for="property-zipcode" class="form-label"
+                    >Zip Code</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="property-zipcode"
+                    value="{{property.zip_code}}"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="property-squarefootage" class="form-label"
+                >Square footage</label
+              >
+              <input
+                type="number"
+                class="form-control"
+                id="property-squarefootage"
+                value="{{property.square_feet}}"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="property-monthlyrent" class="form-label"
+                >Monthly rent</label
+              >
+              <input
+                type="number"
+                class="form-control"
+                id="property-monthlyrent"
+                value="{{property.monthly_rent}}"
+              />
+            </div>
+            <div class="row">
+              <div class="col">
+                <div class="mb-3">
+                  <label for="property-bedrooms" class="form-label"
+                    >Bedrooms</label
+                  >
+                  <select class="form-control" id="property-bedrooms">
+                    <option>{{property.bedrooms}}</option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col">
+                <div class="mb-3">
+                  <label for="property-bathrooms" class="form-label"
+                    >Bathrooms</label
+                  >
+                  <select class="form-control" id="property-bathrooms">
+                    <option>{{property.bathrooms}}</option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="property-availability" class="form-label"
+                >Availability</label
+              >
+              <input
+                type="text"
+                class="form-control"
+                id="property-availability"
+                value="{{property.availability}}"
+              />
+            </div>
+            <p>Amenities</p>
+            <div
+              class="btn-group mb-3"
+              role="group"
+              aria-label="Basic checkbox toggle button group"
+            >
+              <input type="checkbox" class="btn-check" id="property-landry-room"
+              autocomplete="off" {{#if
+              property.amenity.laundry}}checked="true"{{/if}}>
+              <label class="btn btn-outline-primary" for="property-landry-room"
+                >Laundry room</label
+              >
+
+              <input type="checkbox" class="btn-check" id="property-pets"
+              autocomplete="off" {{#if
+              property.amenity.pets}}checked="true"{{/if}}>
+              <label class="btn btn-outline-primary" for="property-pets"
+                >Pets allowed</label
+              >
+
+              <input type="checkbox" class="btn-check" id="property-pool"
+              autocomplete="off" {{#if
+              property.amenity.pool}}checked="true"{{/if}}>
+              <label class="btn btn-outline-primary" for="property-pool"
+                >Pool</label
+              >
+            </div>
+            <div class="mb-3">
+              <label for="property-parking" class="form-label"
+                >Describe the parking</label
+              >
+              <input
+                type="text"
+                class="form-control"
+                id="property-parking"
+                value="{{property.amenity.parking}}"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="property-description" class="form-label"
+                >Description</label
+              >
+              <textarea
+                id="property-description"
+                cols="30"
+                rows="10"
+                class="form-control"
+              >{{property.description}}
+              </textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Save</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

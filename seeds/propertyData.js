@@ -11,7 +11,8 @@ const propertyData = [
     square_feet: 900,
     description: "One classy place.",
     availability: "Now",
-    property_type: "House"
+    property_type: "House",
+    property_image: "1648208400082.jpg",
   },
   {
     user_id: 1,
@@ -23,7 +24,8 @@ const propertyData = [
     square_feet: 600,
     description: "Another classy place.",
     availability: "April 10th",
-    property_type: "House"
+    property_type: "House",
+    property_image: "1648307679260.jpg",
   },
   {
     user_id: 2,
@@ -35,7 +37,7 @@ const propertyData = [
     square_feet: 2500,
     description: "A big classy place.",
     availability: "Now",
-    property_type: "House"
+    property_type: "House",
   },
   {
     user_id: 2,
@@ -47,8 +49,8 @@ const propertyData = [
     square_feet: 10000,
     description: "A sketchy yet inviting compound",
     availability: "Now",
-    property_type: "House"
-  }
+    property_type: "House",
+  },
 ];
 
 const seedProperties = () => Property.bulkCreate(propertyData);
