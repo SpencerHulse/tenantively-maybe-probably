@@ -74,7 +74,7 @@ a {
   font-size: 14px;
 }
 
-.dropdown-toggle {
+.dropdown-toggle, .back-to-dashboard {
   border: none;
   letter-spacing: 2px;
   font-size: 14px;
@@ -85,6 +85,7 @@ a {
   border: 1px solid #D8D8D8;
   border-radius: 10px;
   overflow: hidden;
+  background-color: white;
 }
 
 .logo {
@@ -138,4 +139,8 @@ a {
 
 .plan-overview {
   text-align: center;
+}
+
+.dash-property-image {
+    max-width: 200px;
 }
