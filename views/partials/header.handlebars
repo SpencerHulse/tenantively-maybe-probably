@@ -1,22 +1,22 @@
 <!-- Main jumbotron -->
-<div
-  class="header"
-  style="min-height: 100px !important; background-image: url(/images/header.jpg) !important;"
->
+
   <div class="nav">
     <div class="container">
-      <div class="nav-container">
+      <div class="row">
+        <div class="d-flex justify-content-between align-items-center">
         <a href="/">
           <img class="head-logo" src="/images/tenantively-logo-dark.png" alt="">
-        </a>
-        {{#if loggedIn}}
-          <a href="/dashboard">Dashboard</a>
-          <button id="logout" class="btn-no-style">Logout</button>
+        </a>          <div class="d-flex menu-options align-items-center">
+          <ul>
+          {{#if loggedIn}}
+            <li><a href="/dashboard">Dashboard</a></li>
+            <li><a href="/logout">Logout</a></li>
         {{else}}
-          <a href="/login">Login</a>
+        <li><a href="/login">Log in or Sign Up</a></li>
         {{/if}}
+          </ul>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-</div>
-
