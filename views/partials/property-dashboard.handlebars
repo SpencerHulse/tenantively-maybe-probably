@@ -1,34 +1,9 @@
-<a href="#INSERTPROPERTYLINKHERE" class="list-group-item list-group-item-action flex-column align-items-start">
-                                    <div class="d-flex w-100">
-                                        <img class="property-thumbnail" src="https://place-puppy.com/50x50">
-                                        <div class="col-3" >
-                                            <h3 class="mb-1">{{address}}</h5>
-                                                <p><strong>Rent:</strong> <span class="property-rent">$ {{monthly_rent}}</span></p>
-                                                <p><strong>Last updated on:</strong> {{updated_at}}</p>
-
-                                        </div>
-                                        <div class="col-3 mt-4">
-                                            <p><strong>Bed/Bath:</strong> {{bedrooms}}/{{bathrooms}}</p>
-                                            <p><strong>Square Feet:</strong> {{square_feet}}</p>
-                                        </div>
-                                        <div class="col-3 mt-4">
-                                            <p><strong>Property Type:</strong> {{property_type}} </p>
-                                            <p><strong>Availability:</strong> {{availability}}</p>
-                                        </div>
-                                        <div class="col-3">
-                                                <h3 class="mb-1">Amenities</h3>
-                                                {{#if amenity.pets}}
-                                                <li>Pets allowed</li>
-                                                {{/if}}
-                                                {{#if amenity.pool}}
-                                                <li>Access to a pool</li>
-                                                {{/if}}
-                                                {{#if amenity.laundry}}
-                                                <li>Laundry room on premises</li>
-                                                {{/if}}
-                                                <li>{{amenity.parking}}</li>
-                                            
-                                        </div>
-                                    </div>
-                                </a>
-    
+<a href="/dashboard/{{id}}" class="list-group-item list-group-item-action flex-column align-items-start">
+  <div class="d-flex w-100">
+    <img class="property-thumbnail" src="https://tenantively-images.s3.amazonaws.com/{{property_image}}">
+    <div>
+      <h3 class="mb-1">{{address}}</h5>
+        <p>Rent: <strong>$ {{monthly_rent}}</strong></p>
+    </div>
+  </div>
+</a>

@@ -1,34 +1,106 @@
-{{> header}}
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <link rel="stylesheet" href="/css/style.css">
+  <title>Tenantive.ly</title>
+  <style>
+    #show_bg {
+      background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgb(255, 255, 255)),
+      url('https://tenantively-images.s3.amazonaws.com/{{properties.property_image}}');
+      height: 400px;
+      background-size: cover;
+      filter: blur(40px);
+      -webkit-filter: blur(40px);
+      color: white;
+      padding: 20px;
+      zoom: 100%;
+      position: relative;
+      top: -20px;
+      z-index: -100;
+      opacity: 65%;
+    }
 
-<div class="container">
-    <div class="row mt-3">
-        <h2>{{properties.address}}</h2>
-        <p>{{properties.property_type}} with {{properties.bedrooms}} bedrooms and {{properties.bathrooms}} bathrooms</p>
-    </div>
-    <div class="row mt-3">
-        <div class="col">
-            <img src="https://placedog.net/500" alt="" srcset="">
+    .main-content {
+      margin-top: -380px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id='show_bg'></div>
+  <main role="main">
+    <div class="main-content">
+      {{> header}}
+
+      <div class="container">
+        <div class="row mt-5 single-property-details">
+          <div class="d-flex justify-content-between">
+            <div>
+              <h2>{{properties.address}}</h2>
+              <p>{{properties.property_type}}
+                with
+                {{properties.bedrooms}}
+                bedrooms and
+                {{properties.bathrooms}}
+                bathrooms</p>
+            </div>
+            <div>
+              <h2>$ {{properties.monthly_rent}} / month</h2>
+            </div>
+          </div>
+
+
         </div>
-        <div class="col">
-            <h3>At a glance</h3>
-            <ul>
-                <li>Monthly rent: <strong>${{properties.monthly_rent}}</strong></li>
-                <li>Bedrooms: {{properties.bedrooms}}</li>
-                <li>Bathrooms: {{properties.bathrooms}}</li>
-                {{#if properties.amenity.pets}}
-                <li>Pets allowed</li>
-                {{/if}}
-                {{#if properties.amenity.pool}}
-                <li>Access to a pool</li>
-                {{/if}}
-                {{#if properties.amenity.laundry}}
-                <li>Laundry room on premises</li>
-                {{/if}}
-                <li>{{properties.amenity.parking}}</li>
-            </ul>
+        <div class="row mt-3">
+
+          <div class="col">
+
+            <img class="single-image img-fluid"
+              src="https://tenantively-images.s3.amazonaws.com/{{properties.property_image}}"
+              alt="An image of the house at {{properties.address}}" srcset="" />
+          </div>
         </div>
+
+        <div class="row">
+          <div class="col-md-4 col-s-12 mt-4">
+            <div class="dash-card">
+              <div class="dash-card-title">
+                <h2>Insights</h2>
+              </div>
+              <div class="dash-card-content insights-list">
+                <ul>
+                  <li>Bedrooms: {{properties.bedrooms}}</li>
+                  <li>Bathrooms: {{properties.bathrooms}}</li>
+                  {{#if properties.amenity.pets}}
+                  <li>Pets allowed</li>
+                  {{/if}}
+                  {{#if properties.amenity.pool}}
+                  <li>Access to a pool</li>
+                  {{/if}}
+                  {{#if properties.amenity.laundry}}
+                  <li>Laundry room on premises</li>
+                  {{/if}}
+                  {{#if properties.amenity.parking}}
+                  <li>{{properties.amenity.parking}}</li>
+                  {{/if}}
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-8 col-s-12 mt-4">
+            <h2>Description</h2>
+            <p>{{properties.description}}</p>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="row mt-3">
-        <p>{{properties.description}}</p>
     </div>
-</div>
+  </main>
+</body>
+
+  {{#if loggedIn}}
+    <script src="/js/logout.js"></script>
+  {{/if}}

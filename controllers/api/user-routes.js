@@ -67,9 +67,9 @@ router.post("/", (req, res) => {
         req.session.user_id = data.id;
         req.session.username = data.username;
         req.session.loggedIn = true;
-      });
 
-      res.status(200).json(data);
+        res.status(200).json(data);
+      });
     })
     .catch((err) => {
       console.log(err);
@@ -79,7 +79,7 @@ router.post("/", (req, res) => {
 
 // Login to user account - /api/users/login
 router.post("/login", (req, res) => {
-  User.findOne({ where: { username: req.body.username } })
+  User.findOne({ where: { email: req.body.email } })
     .then((data) => {
       if (!data) {
         res.status(404).json({ message: "No user found with this username." });

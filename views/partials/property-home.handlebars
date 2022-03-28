@@ -1,8 +1,37 @@
-<div class="card">
-  <img src="https://placedog.net/500" alt="" srcset="" />
+{{!-- <div class="card">
+  <img src="https://tenantively-images.s3.amazonaws.com/{{property_image}}" alt="An image of the house at {{address}}"
+    srcset="" />
   <h2>{{address}}</h2>
   <p>{{description}}</p>
   <p class="content-item">Bed/Bath: {{bedrooms}}/{{bathrooms}}</p>
   <p class="content-item">Rent: ${{monthly_rent}}/month</p>
   <p><a class="btn" href="/property/{{id}}" role="button">View details &raquo;</a></p>
 </div>
+
+
+<div class="col">
+  <div class="card">
+    <img src="https://tenantively-images.s3.amazonaws.com/{{property_image}}" class="card-img-top"
+      alt="An image of the house at {{address}}">
+    <div class="card-body">
+      <h5 class="card-title">{{address}}</h5>
+    </div>
+  </div>
+</div> --}}
+
+<a href="/property/{{id}}">
+<div class="col">
+  <div class="dash-card">
+        <div class="dash-card-badge">
+      <p class="dash-card-rent">${{monthly_rent}} / mo</p>
+    </div>
+    <div class="dash-card-home-image">
+      <img src="https://tenantively-images.s3.amazonaws.com/{{property_image}}" class="card-img-top"
+        alt="An image of the house at {{address}}">
+    </div>
+    <div class="dash-card-title">
+      <h2>{{address}}</h2>
+    </div>
+  </div>
+</div>
+</a>

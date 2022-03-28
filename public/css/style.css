@@ -32,14 +32,13 @@ a {
   margin-bottom: 5vw;
   padding: 10px;
   border-radius: 10px;
-  background-color: rgba(255, 255, 255, 0.65);
 }
 
 .brand {
   font-size: 30px;
 }
 
-.btn {
+.btn-primary {
   background-color: #0c4279;
   color: white;
 }
@@ -54,7 +53,6 @@ a {
 
 .card {
   padding: 20px;
-    background-color: #6D8EAF;
 }
 
 .login-container {
@@ -74,7 +72,8 @@ a {
   font-size: 14px;
 }
 
-.dropdown-toggle {
+.dropdown-toggle, .dash-menu-button {
+  background-color: #0c4279;
   border: none;
   letter-spacing: 2px;
   font-size: 14px;
@@ -85,10 +84,36 @@ a {
   border: 1px solid #D8D8D8;
   border-radius: 10px;
   overflow: hidden;
+  background-color: white;
 }
 
 .logo {
   width: 35px;
+}
+
+.head-logo {
+  object-fit: contain;
+  width: 200px;
+  /* height: 100px; */
+  overflow: hidden;
+}
+
+.menu-options {
+  padding-top: 31px;
+  padding-bottom: 19px;
+}
+
+.menu-options ul {
+  list-style: none;
+  display: inline-flex;
+  margin-bottom: 0px;
+}
+
+.menu-options ul li {
+  margin-left: 30px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12rem;
 }
 
 .dash-card-title {
@@ -110,6 +135,39 @@ a {
 
 .dash-card-content {
   padding: 13px;
+}
+
+.dash-card-home-image {
+  padding: 0px;
+  overflow: hidden;
+}
+
+.dash-card-home-image img {
+  height: 250px;
+  object-fit: cover;
+}
+
+.dash-card-badge {
+  position: relative;
+}
+
+.dash-menu-left {
+  width: 300px;
+}
+
+.dash-card-rent {
+  font-size: 17px;
+  position: absolute;
+  padding: 7px 15px;
+  border-radius: 0px 0px 15px 0px;
+  border-right: solid 2px white;
+  border-bottom: solid 2px white;
+  top: 0px;
+  display: block;
+  background-color: #86bd4f;
+  color: white;
+  -webkit-box-shadow: 0px 0px 17px 5px rgba(0,0,0,0.27); 
+  box-shadow: 0px 0px 17px 5px rgba(0,0,0,0.27);
 }
 
 .property-thumbnail {
@@ -138,4 +196,31 @@ a {
 
 .plan-overview {
   text-align: center;
+}
+
+.dash-property-image {
+    max-width: 200px;
+}
+
+.single-image {
+  border: solid 1px #D8D8D8;
+  padding: 0px;
+  border-radius: 10px;
+  overflow: hidden;
+  object-fit: cover;
+  width: 100%;
+}
+
+.single-property-details {
+  text-shadow: rgba(255,255,255,1) 0px 0px 10px;
+
+}
+
+.insights-list ul {
+  list-style-type: "✓";
+  padding-left: 15px;
+}
+
+.insights-list ul li {
+  padding-left: 10px;
 }

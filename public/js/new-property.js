@@ -48,11 +48,28 @@ const newProperty = async (event) => {
       headers: { "Content-Type": "application/json" },
     });
 
+    // Will need to adjust this if we add another request for amenities!
     if (response.ok) {
-      window.location.replace("/");
+      window.location.replace("/dashboard");
     } else {
       alert(response.statusText);
     }
+
+    /*  The below code allows you to get the ID of the property just made.
+    It works because there is a custom get route that grabs the property created most recently.
+    The way it targets the user is through session user_id data.
+    Therefore, it gets the property ID of the newest property for use when adding amenities.
+
+  let newPropertyID;
+
+  const getPropertyResponse = await fetch(`/api/properties/new-property`, {
+    method: "GET",
+    headers: { "Content-Type": "application/json" },
+  })
+    .then((response) => response.json())
+    .then((data) => (newPropertyID = data[0].id));
+
+  console.log(newPropertyID); */
   }
 };
 

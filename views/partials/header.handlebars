@@ -1,13 +1,26 @@
 <!-- Main jumbotron -->
-<div
-  class="header"
-  style="min-height: 100px !important; background-image: url(/images/header.jpg) !important;"
->
-  <div class="nav">
-    <div class="container">
-      <div class="nav-container">
-        <h1 class="brand"><a href="/">Tenantive.ly</a></h1>
-        <a href="/login">Login</a>
+
+<div class="nav">
+  <div class="container">
+    <div class="row">
+      <div class="d-flex justify-content-between align-items-center">
+        <a href="/">
+          <img
+            class="head-logo"
+            src="/images/tenantively-logo-dark.png"
+            alt=""
+          />
+        </a>
+        <div class="d-flex menu-options align-items-center">
+          <ul>
+            {{#if loggedIn}}
+              <li><a href="/dashboard">Dashboard</a></li>
+              <li><a href="/logout" id="logout">Logout</a></li>
+            {{else}}
+              <li><a href="/login">Log in or Sign Up</a></li>
+            {{/if}}
+          </ul>
+        </div>
       </div>
     </div>
   </div>
