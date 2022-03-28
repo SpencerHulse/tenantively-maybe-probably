@@ -39,10 +39,10 @@
             </div>
           </div>
           <div class="dash-menu-right">
-            <a href="/logout">
+            <a href="/logout" id="logout">
               <button class="btn btn-secondary dash-menu-button" type="button" id="dropdownMenuButton"
                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Log out
+                Logout
               </button>
             </a>
           </div>
@@ -145,3 +145,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.1/js/bootstrap.min.js"
       integrity="sha512-UR25UO94eTnCVwjbXozyeVd6ZqpaAE9naiEUBK/A+QDbfSTQFhPGj5lOR6d8tsgbBk84Ggb5A3EkjsOgPRPcKA=="
       crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  {{#if loggedIn}}
+    <script src="/js/logout.js"></script>
+  {{/if}}
