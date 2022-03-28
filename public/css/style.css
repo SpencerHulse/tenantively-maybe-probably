@@ -201,3 +201,26 @@ a {
 .dash-property-image {
     max-width: 200px;
 }
+
+.single-image {
+  border: solid 1px #D8D8D8;
+  padding: 0px;
+  border-radius: 10px;
+  overflow: hidden;
+  object-fit: cover;
+  width: 100%;
+}
+
+.single-property-details {
+  text-shadow: rgba(255,255,255,1) 0px 0px 10px;
+
+}
+
+.insights-list ul {
+  list-style-type: "✓";
+  padding-left: 15px;
+}
+
+.insights-list ul li {
+  padding-left: 10px;
+}

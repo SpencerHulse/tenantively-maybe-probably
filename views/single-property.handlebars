@@ -12,8 +12,8 @@
       url('https://tenantively-images.s3.amazonaws.com/{{properties.property_image}}');
       height: 400px;
       background-size: cover;
-      filter: blur(20px);
-      -webkit-filter: blur(20px);
+      filter: blur(40px);
+      -webkit-filter: blur(40px);
       color: white;
       padding: 20px;
       zoom: 100%;
@@ -24,7 +24,7 @@
     }
 
     .main-content {
-      margin-top: -400px;
+      margin-top: -380px;
     }
   </style>
 </head>
@@ -36,47 +36,71 @@
       {{> header}}
 
       <div class="container">
-        <div class="row mt-3">
-          <h2>{{properties.address}}</h2>
-          <p>{{properties.property_type}}
-            with
-            {{properties.bedrooms}}
-            bedrooms and
-            {{properties.bathrooms}}
-            bathrooms</p>
-        </div>
-        <div class="row mt-3">
-          <div class="col-md-6 col-s-12">
+        <div class="row mt-5 single-property-details">
+          <div class="d-flex justify-content-between">
             <div>
-            <img src="https://tenantively-images.s3.amazonaws.com/{{properties.property_image}}"
-              alt="An image of the house at {{properties.address}}" srcset="" style="max-width: 500px;" />
+              <h2>{{properties.address}}</h2>
+              <p>{{properties.property_type}}
+                with
+                {{properties.bedrooms}}
+                bedrooms and
+                {{properties.bathrooms}}
+                bathrooms</p>
+            </div>
+            <div>
+              <h2>$ {{properties.monthly_rent}} / month</h2>
             </div>
           </div>
-          <div class="col-md-6 col-s-12">
-            <h3>At a glance</h3>
-            <ul>
-              <li>Monthly rent: <strong>${{properties.monthly_rent}}</strong></li>
-              <li>Bedrooms: {{properties.bedrooms}}</li>
-              <li>Bathrooms: {{properties.bathrooms}}</li>
-              {{#if properties.amenity.pets}}
-              <li>Pets allowed</li>
-              {{/if}}
-              {{#if properties.amenity.pool}}
-              <li>Access to a pool</li>
-              {{/if}}
-              {{#if properties.amenity.laundry}}
-              <li>Laundry room on premises</li>
-              {{/if}}
-              <li>{{properties.amenity.parking}}</li>
-            </ul>
-          </div>
+
+
         </div>
         <div class="row mt-3">
-          <p>{{properties.description}}</p>
+
+          <div class="col">
+
+            <img class="single-image img-fluid"
+              src="https://tenantively-images.s3.amazonaws.com/{{properties.property_image}}"
+              alt="An image of the house at {{properties.address}}" srcset="" />
+          </div>
+
+
+
+          <div class="row mt-4">
+            <div class="col-4">
+              <div class="dash-card">
+                <div class="dash-card-title">
+                  <h2>Insights</h2>
+                </div>
+                <div class="dash-card-content insights-list">
+                  <ul>
+                    <li>Bedrooms: {{properties.bedrooms}}</li>
+                    <li>Bathrooms: {{properties.bathrooms}}</li>
+                    {{#if properties.amenity.pets}}
+                    <li>Pets allowed</li>
+                    {{/if}}
+                    {{#if properties.amenity.pool}}
+                    <li>Access to a pool</li>
+                    {{/if}}
+                    {{#if properties.amenity.laundry}}
+                    <li>Laundry room on premises</li>
+                    {{/if}}
+                    {{#if properties.amenity.parking}}
+                    <li>{{properties.amenity.parking}}</li>
+                    {{/if}}
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="col-8">
+              <h2>Description</h2>
+              <p>{{properties.description}}</p>
+            </div>
+          </div>
         </div>
       </div>
+    </div>
 
-      {{#if loggedIn}}
-      <script src="/js/logout.js"></script>
-      {{/if}}
+    {{#if loggedIn}}
+    <script src="/js/logout.js"></script>
+    {{/if}}
     </div>
