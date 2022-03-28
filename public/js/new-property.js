@@ -50,7 +50,7 @@ const newProperty = async (event) => {
 
     // Will need to adjust this if we add another request for amenities!
     if (response.ok) {
-      window.location.replace("/");
+      window.location.replace("/dashboard");
     } else {
       alert(response.statusText);
     }
