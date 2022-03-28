@@ -25,45 +25,15 @@ router.get("/", (req, res) => {
     });
 });
 
-router.get("/dashboard/:id", (req, res) => {
-  Property.findAll({
-    where: {
-      user_id: 1
-    },
-    attributes: [
-      'id',
-      'address',
-      'description',
-      'bedrooms',
-      'bathrooms',
-      'monthly_rent',
-      'property_type',
-      'availability',
-      'zip_code',
-      'square_feet',
-      'created_at',
-      'monthly_rent'
-    ],
-    include: [
-    {
-      model: Amenities,
-      attributes: ["id", "laundry", "pets", "pool", "parking"],
-    },
-    {
-      model: User,
-      attributes: ['id', 'username']
-    }
-  ]
-  })
-  .then(data => {
-    const properties = data.map(property => property.get({ plain: true }));
-  res.render("dashboard", { properties } );
-  })
+/* Login page */
+router.get("/login", (req, res) => {
+  if (req.session.loggedIn) {
+    res.redirect("/");
+    return;
+  }
+
   res.render("login");
-
-})
-
-
+});
 
 /* Sign up page */
 router.get("/signup", (req, res) => {

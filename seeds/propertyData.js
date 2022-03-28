@@ -25,8 +25,6 @@ const propertyData = [
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Platea dictumst vestibulum rhoncus est pellentesque elit ullamcorper dignissim cras. Lorem donec massa sapien faucibus et molestie ac feugiat sed. Pharetra sit amet aliquam id diam maecenas ultricies mi. Fames ac turpis egestas sed tempus urna et. Euismod elementum nisi quis eleifend. Volutpat ac tincidunt vitae semper quis lectus nulla. Congue eu consequat ac felis donec et odio. Sed pulvinar proin gravida hendrerit lectus. Duis tristique sollicitudin nibh sit. Vestibulum rhoncus est pellentesque elit ullamcorper dignissim cras tincidunt lobortis. Urna nunc id cursus metus aliquam eleifend. Id leo in vitae turpis massa sed elementum tempus.",
     availability: "Now",
     property_type: "House",
-    property_image: "1648307679260.jpg",
-    
   },
   {
     user_id: 2,
@@ -39,8 +37,6 @@ const propertyData = [
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Platea dictumst vestibulum rhoncus est pellentesque elit ullamcorper dignissim cras. Lorem donec massa sapien faucibus et molestie ac feugiat sed. Pharetra sit amet aliquam id diam maecenas ultricies mi. Fames ac turpis egestas sed tempus urna et. Euismod elementum nisi quis eleifend. Volutpat ac tincidunt vitae semper quis lectus nulla. Congue eu consequat ac felis donec et odio. Sed pulvinar proin gravida hendrerit lectus. Duis tristique sollicitudin nibh sit. Vestibulum rhoncus est pellentesque elit ullamcorper dignissim cras tincidunt lobortis. Urna nunc id cursus metus aliquam eleifend. Id leo in vitae turpis massa sed elementum tempus.",
     availability: "Now",
     property_type: "House",
-    property_image: "1648307679260.jpg",
-
   },
 ];
 
