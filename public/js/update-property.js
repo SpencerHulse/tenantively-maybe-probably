@@ -51,6 +51,7 @@ const updatePropertyHandler = async (event) => {
 
     if (!response.ok) {
       alert(response.statusText);
+      return;
     }
   }
 
@@ -72,12 +73,13 @@ const updatePropertyHandler = async (event) => {
       headers: { "Content-Type": "application/json" },
     });
 
-    if (responseAmenities.ok) {
-      window.location.replace("/dashboard");
-    } else {
+    if (!responseAmenities.ok) {
       alert(responseAmenities.statusText);
+      return;
     }
   }
+
+  window.location.replace("/dashboard");
 };
 
 updateProperty.addEventListener("click", updatePropertyHandler);
