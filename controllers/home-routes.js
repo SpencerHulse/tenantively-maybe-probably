@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { Property, Amenities } = require("../models");
+const { Property, Amenities, User } = require("../models");
 
 /* Homepage */
 router.get("/", (req, res) => {
@@ -85,10 +85,15 @@ router.get("/property/:id", (req, res) => {
       "property_type",
       "property_image",
     ],
-    include: {
+    include: [{
       model: Amenities,
       attributes: ["id", "laundry", "pets", "pool", "parking"],
     },
+    {
+      model: User,
+      attributes: ["id", "email", "phone"]
+    }
+  ]
   })
     .then((data) => {
       const properties = data.get({ plain: true });
