@@ -16,6 +16,23 @@ router.get("/", (req, res) => {
     });
 });
 
+// Find all properties by zipcode
+router.get("/filtered/:zip", (req, res) => {
+  Property.findAll({
+    where: {zip_code: req.params.zip}
+  })
+  .then(data => {
+    if(!data){
+      res.status(404).json({ message: "No property found in this zipcode"});
+      return;
+    }
+    res.status(200).json(data)
+  })
+  .catch(err => {
+    res.status(500).json(err)
+  })
+})
+
 // Find the newest property of a user - /api/properties/new-property
 // Used for adding amenities to a property on the same form!
 router.get("/new-property", withAuth, (req, res) => {

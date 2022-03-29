@@ -25,6 +25,32 @@ router.get("/", (req, res) => {
     });
 });
 
+router.get("/filtered/:zip", (req, res) => {
+  Property.findAll({
+    where: {
+      zip_code: req.params.zip
+    },
+    attributes: [
+      "id",
+      "address",
+      "description",
+      "bedrooms",
+      "bathrooms",
+      "monthly_rent",
+      "property_type",
+      "property_image",
+      "zip_code"
+    ],
+  })
+  .then((data) => {
+    const properties = data.map((property) => property.get({ plain: true }));
+    res.render("homepage", { properties, loggedIn: req.session.loggedIn, filtered:true, zipcode: req.params.zip });
+  })
+  .catch(err => {
+    res.status(500).json(err)
+  })
+})
+
 /* Login page */
 router.get("/login", (req, res) => {
   if (req.session.loggedIn) {
