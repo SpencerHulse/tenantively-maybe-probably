@@ -1,4 +1,4 @@
-/* Property Info and Amenities Form */
+/* Property Info and Amenities Form - Updating */
 const updateProperty = document.getElementById("save-btn");
 
 const updatePropertyHandler = async (event) => {

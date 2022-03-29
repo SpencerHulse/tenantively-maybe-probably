@@ -1,8 +1,7 @@
 const router = require("express").Router();
 const { User, Property, Amenities } = require("../../models");
 
-// Get all users (eventually, exclude password attribute) - /api/users
-// Shows users, their properties, and the amenities of those properties
+// Get all users - /api/users
 router.get("/", (req, res) => {
   User.findAll({
     attributes: { exclude: ["password"] },
@@ -14,8 +13,8 @@ router.get("/", (req, res) => {
     });
 });
 
-// Get single user (eventually, exclude password attribute) - /api/users/:id
-// Shows a user, their properties, and the amenities of those properties
+// Get single user - /api/users/:id
+// Currently only retrieves limited property attributes. Update as needed.
 router.get("/:id", (req, res) => {
   User.findOne({
     where: { id: req.params.id },
@@ -53,7 +52,7 @@ router.get("/:id", (req, res) => {
     });
 });
 
-// Create new user account (might need to update for landlord/renter eventually) - /api/users
+// Create new user account - /api/users
 router.post("/", (req, res) => {
   User.create({
     username: req.body.username,
@@ -62,7 +61,7 @@ router.post("/", (req, res) => {
     phone: req.body.phone,
   })
     .then((data) => {
-      // If renters are added, make sure landlord/renter true/false goes here
+      // Relevant session data
       req.session.save(() => {
         req.session.user_id = data.id;
         req.session.username = data.username;
@@ -93,7 +92,7 @@ router.post("/login", (req, res) => {
         return;
       }
 
-      // If renters are added, make sure landlord/renter true/false goes here
+      // Session data
       req.session.save(() => {
         req.session.user_id = data.id;
         req.session.username = data.username;
@@ -120,7 +119,6 @@ router.post("/logout", (req, res) => {
 });
 
 // Update user account - /api/users/:id
-// Might want to narrow down what can be changed and not just have req.body eventually
 router.put("/:id", (req, res) => {
   User.update(req.body, { individualHooks: true, where: { id: req.params.id } })
     .then((data) => {

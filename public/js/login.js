@@ -1,3 +1,4 @@
+// Handles the login process
 const submitForm = document.getElementById("login-form");
 
 const submitFormHandler = async (event) => {

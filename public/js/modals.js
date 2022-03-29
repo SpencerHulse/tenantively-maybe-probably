@@ -1,3 +1,4 @@
+// Custom modals and toasts
 function showToasts() {
   const address = window.location.href;
   const splittedAddress = address.split("t=");
@@ -19,11 +20,11 @@ function showToasts() {
     $("#myToast").toast("show");
   }
 
-    // Edit - toast
-    if (splittedAddress[1] === "login-err") {
-      document.getElementById("myToast").innerHTML = loginErr;
-      $("#myToast").toast("show");
-    }
+  // Edit - toast
+  if (splittedAddress[1] === "login-err") {
+    document.getElementById("myToast").innerHTML = loginErr;
+    $("#myToast").toast("show");
+  }
 }
 
 function showModals() {

@@ -13,7 +13,9 @@ router.get("/", (req, res) => {
       "monthly_rent",
       "property_type",
       "property_image",
+      "updatedAt",
     ],
+    order: [["updatedAt", "DESC"]],
   })
     .then((data) => {
       const properties = data.map((property) => property.get({ plain: true }));
@@ -25,6 +27,7 @@ router.get("/", (req, res) => {
     });
 });
 
+/* Address route for filtered homepage results */
 router.get("/filtered/:zip", (req, res) => {
   Property.findAll({
     where: {
@@ -96,15 +99,16 @@ router.get("/property/:id", (req, res) => {
       "property_type",
       "property_image",
     ],
-    include: [{
-      model: Amenities,
-      attributes: ["id", "laundry", "pets", "pool", "parking"],
-    },
-    {
-      model: User,
-      attributes: ["id", "email", "phone"]
-    }
-  ]
+    include: [
+      {
+        model: Amenities,
+        attributes: ["id", "laundry", "pets", "pool", "parking"],
+      },
+      {
+        model: User,
+        attributes: ["id", "email", "phone"],
+      },
+    ],
   })
     .then((data) => {
       if (!data) {

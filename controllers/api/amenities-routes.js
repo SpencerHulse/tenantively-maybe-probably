@@ -31,7 +31,7 @@ router.get("/:id", (req, res) => {
 
 // Add amenities - /api/amenities
 router.post("/", withAuth, (req, res) => {
-  // Likely updated as more amenities are added
+  // Update if more amenities are added
   Amenities.create({
     property_id: req.body.property_id,
     laundry: req.body.laundry,
@@ -47,6 +47,7 @@ router.post("/", withAuth, (req, res) => {
 });
 
 // Update amenities using property id /api/amenities
+// Used in update-property.js
 router.put("/", withAuth, (req, res) => {
   Amenities.update(req.body, { where: { property_id: req.body.id } })
     .then((data) => {
@@ -63,7 +64,7 @@ router.put("/", withAuth, (req, res) => {
     });
 });
 
-// Update amenities - /api/amenities/:id
+// Update amenities using id - /api/amenities/:id
 router.put("/:id", withAuth, (req, res) => {
   Amenities.update(req.body, {
     where: { id: req.params.id },
@@ -83,7 +84,6 @@ router.put("/:id", withAuth, (req, res) => {
 });
 
 // Delete amenities - /api/amenities/:id
-// Likely this will not be used
 router.delete("/:id", withAuth, (req, res) => {
   Amenities.destroy({ where: { id: req.params.id } })
     .then((data) => {

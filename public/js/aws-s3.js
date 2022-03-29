@@ -1,7 +1,9 @@
 require("dotenv").config();
 const fs = require("fs");
+/* Amazon Web Services s3 Bucket */
 const S3 = require("aws-sdk/clients/s3");
 
+/* Bucket Data */
 const bucketName = process.env.AWS_BUCKET_NAME;
 const region = process.env.AWS_BUCKET_REGION;
 const accessKeyId = process.env.AWS_ACCESS_KEY;
@@ -27,18 +29,6 @@ function uploadFile(file) {
 }
 
 exports.uploadFile = uploadFile;
-
-// Downloads a file from s3
-function getFileStream(fileKey) {
-  const downloadParams = {
-    Key: fileKey,
-    Bucket: bucketName,
-  };
-
-  return s3.getObject(downloadParams).createReadStream();
-}
-
-exports.getFileStream = getFileStream;
 
 // Delete a file on s3
 function deleteFile(fileKey) {
