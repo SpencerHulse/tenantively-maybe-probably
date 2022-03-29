@@ -43,6 +43,11 @@ a {
   color: white;
 }
 
+#filter-label {
+  background-color: lightgray;
+  color: #0c4279;
+}
+
 .btn:hover {
   background-color: #6d8eaf;
 }
@@ -56,7 +61,7 @@ a {
 }
 
 .login-container {
-    max-width: 400px;
+  max-width: 400px;
 }
 
 .dash-menu {
@@ -72,7 +77,8 @@ a {
   font-size: 14px;
 }
 
-.dropdown-toggle, .dash-menu-button {
+.dropdown-toggle,
+.dash-menu-button {
   background-color: #0c4279;
   border: none;
   letter-spacing: 2px;
@@ -81,7 +87,7 @@ a {
 }
 
 .dash-card {
-  border: 1px solid #D8D8D8;
+  border: 1px solid #d8d8d8;
   border-radius: 10px;
   overflow: hidden;
   background-color: white;
@@ -121,7 +127,7 @@ a {
 }
 
 .dash-card-title {
-  background-color: #F7F7F7;
+  background-color: #f7f7f7;
   padding-right: 15px;
   text-transform: uppercase;
   letter-spacing: 0.15rem;
@@ -134,7 +140,7 @@ a {
 
 .home-card-title {
   position: relative;
-  background-color: #F7F7F7;
+  background-color: #f7f7f7;
   padding-right: 15px;
   text-transform: uppercase;
   letter-spacing: 0.15rem;
@@ -144,14 +150,14 @@ a {
 .home-card-title h2 {
   width: 100%;
   position: absolute;
-  background-color: #F7F7F7;
+  background-color: #f7f7f7;
   bottom: 0px;
   font-size: 18px;
   font-weight: 650;
   text-transform: uppercase;
   letter-spacing: 2px;
   padding: 13px;
-  margin-bottom: 0px
+  margin-bottom: 0px;
 }
 
 .dash-card-title h2 {
@@ -160,7 +166,7 @@ a {
   text-transform: uppercase;
   letter-spacing: 2px;
   padding: 13px;
-  margin-bottom: 0px
+  margin-bottom: 0px;
 }
 
 .dash-card-content {
@@ -195,8 +201,8 @@ a {
   display: block;
   background-color: #86bd4f;
   color: white;
-  -webkit-box-shadow: 0px 0px 17px 5px rgba(0,0,0,0.27); 
-  box-shadow: 0px 0px 17px 5px rgba(0,0,0,0.27);
+  -webkit-box-shadow: 0px 0px 17px 5px rgba(0, 0, 0, 0.27);
+  box-shadow: 0px 0px 17px 5px rgba(0, 0, 0, 0.27);
 }
 
 .property-thumbnail {
@@ -228,11 +234,11 @@ a {
 }
 
 .dash-property-image {
-    max-width: 200px;
+  max-width: 200px;
 }
 
 .single-image {
-  border: solid 1px #D8D8D8;
+  border: solid 1px #d8d8d8;
   padding: 0px;
   border-radius: 10px;
   overflow: hidden;
@@ -241,8 +247,7 @@ a {
 }
 
 .single-property-details {
-  text-shadow: rgba(255,255,255,1) 0px 0px 10px;
-
+  text-shadow: rgba(255, 255, 255, 1) 0px 0px 10px;
 }
 
 .insights-list ul {

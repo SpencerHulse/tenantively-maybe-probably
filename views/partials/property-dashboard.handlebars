@@ -1,9 +1,12 @@
 <a href="/dashboard/{{id}}" class="list-group-item list-group-item-action flex-column align-items-start">
-  <div class="d-flex w-100">
-    <img class="property-thumbnail" src="https://tenantively-images.s3.amazonaws.com/{{property_image}}">
-    <div>
-      <h3 class="mb-1">{{address}}</h5>
-        <p>Rent: <strong>$ {{monthly_rent}}</strong></p>
+  <div class="d-flex w-100 justify-content-between">
+    <div class="d-flex">
+        <img class="property-thumbnail" src="https://tenantively-images.s3.amazonaws.com/{{property_image}}">
+        <div>
+          <h3 class="mb-1">{{address}}</h5>
+            <p>Rent: <strong>$ {{monthly_rent}}</strong></p>
+        </div>
     </div>
+    <div><span class="badge rounded-pill bg-primary">Updated {{format_date updatedAt}}</span></div>
   </div>
 </a>
