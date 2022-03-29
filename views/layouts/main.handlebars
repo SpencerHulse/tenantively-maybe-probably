@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 
-{{!-- <body>
+{{!--
+
+<body>
   <main role="main"> --}}
 
     {{{body}}}
@@ -12,11 +14,25 @@
 
   </main>
 
+  <div id="myModal" class="modal fade">
+{{!-- Modal Content --}}
+  </div>
+
+<div class="toast" style="position: absolute; top: 20px; right: 20px;" id="myToast" data-delay="10000">
+{{!-- Toast Content --}}
+</div>
+
+
   <footer class="container">
     <p>&copy; Tenantive.ly 2022</p>
   </footer>
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-  <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.1/js/bootstrap.min.js"
+    integrity="sha512-UR25UO94eTnCVwjbXozyeVd6ZqpaAE9naiEUBK/A+QDbfSTQFhPGj5lOR6d8tsgbBk84Ggb5A3EkjsOgPRPcKA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="/js/modals.js"></script>
 </body>
 
 </html>

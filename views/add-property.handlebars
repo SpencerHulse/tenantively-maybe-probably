@@ -109,6 +109,21 @@
                     <label for="property-description" class="form-label">Description</label>
                     <textarea id="property-description" cols="30" rows="10" class="form-control"></textarea>
                 </div>
+                <p>Amenities</p>
+                <div class="btn-group mb-3" role="group" aria-label="Basic checkbox toggle button group">
+                  <input type="checkbox" class="btn-check" id="property-laundry-room" autocomplete="off">
+                  <label class="btn btn-outline-primary" for="property-laundry-room">Laundry room</label>
+
+                  <input type="checkbox" class="btn-check" id="property-pets" autocomplete="off">
+                  <label class="btn btn-outline-primary" for="property-pets">Pets allowed</label>
+
+                  <input type="checkbox" class="btn-check" id="property-pool" autocomplete="off">
+                  <label class="btn btn-outline-primary" for="property-pool">Pool</label>
+                </div>
+                <div class="mb-3">
+                  <label for="property-parking" class="form-label">Describe the parking</label>
+                  <input type="text" class="form-control" id="property-parking" value="{{property.amenity.parking}}" />
+                </div>
 
                 <button type="submit" class="btn btn-primary" id="submit-new-property">Add property</button>
             </form>
