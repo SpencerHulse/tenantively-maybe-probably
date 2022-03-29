@@ -280,7 +280,7 @@ a {
   padding-left: 10px;
 }
 
-.errtext h1, p, h2, a {
+.errtext h1, .errtext p, .errtext h2, .errtext  a {
   color: white;
   text-align: center;
 }

@@ -18,6 +18,12 @@ function showToasts() {
     document.getElementById("myToast").innerHTML = editToast;
     $("#myToast").toast("show");
   }
+
+    // Edit - toast
+    if (splittedAddress[1] === "login-err") {
+      document.getElementById("myToast").innerHTML = loginErr;
+      $("#myToast").toast("show");
+    }
 }
 
 function showModals() {
@@ -42,6 +48,14 @@ The property was successfully created.
 
 var editToast = `<div class="toast-body">
 The edited property was successfully saved.
+</div>`;
+
+var loginErr = `
+<div class="toast-header bg-danger">
+<strong class="me-auto text-white">Login error</strong>
+</div>
+<div class="toast-body">
+Incorrect email address or password
 </div>`;
 
 var welcomeModal = `<div class="modal-dialog">
