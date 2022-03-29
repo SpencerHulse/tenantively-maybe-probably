@@ -1,7 +1,7 @@
 const router = require("express").Router();
 const path = require("path");
 
-const { Property, Amenities } = require("../../models");
+const { Property } = require("../../models");
 
 // Deals with the uploads folder in the root
 const fs = require("fs");
