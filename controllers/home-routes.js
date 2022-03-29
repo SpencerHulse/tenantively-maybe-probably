@@ -28,7 +28,7 @@ router.get("/", (req, res) => {
 router.get("/filtered/:zip", (req, res) => {
   Property.findAll({
     where: {
-      zip_code: req.params.zip
+      zip_code: req.params.zip,
     },
     attributes: [
       "id",
@@ -39,17 +39,28 @@ router.get("/filtered/:zip", (req, res) => {
       "monthly_rent",
       "property_type",
       "property_image",
-      "zip_code"
+      "zip_code",
     ],
   })
-  .then((data) => {
-    const properties = data.map((property) => property.get({ plain: true }));
-    res.render("homepage", { properties, loggedIn: req.session.loggedIn, filtered:true, zipcode: req.params.zip });
-  })
-  .catch(err => {
-    res.status(500).json(err)
-  })
-})
+    .then((data) => {
+      if (!data) {
+        res.render("404");
+        return;
+      }
+
+      const properties = data.map((property) => property.get({ plain: true }));
+
+      res.render("homepage", {
+        properties,
+        loggedIn: req.session.loggedIn,
+        filtered: true,
+        zipcode: req.params.zip,
+      });
+    })
+    .catch((err) => {
+      res.status(500).json(err);
+    });
+});
 
 /* Login page */
 router.get("/login", (req, res) => {
@@ -96,7 +107,13 @@ router.get("/property/:id", (req, res) => {
   ]
   })
     .then((data) => {
+      if (!data) {
+        res.render("404");
+        return;
+      }
+
       const properties = data.get({ plain: true });
+
       res.render("single-property", {
         properties,
         loggedIn: req.session.loggedIn,
