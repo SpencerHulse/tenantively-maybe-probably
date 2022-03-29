@@ -87,6 +87,10 @@ a {
   background-color: white;
 }
 
+.home-card {
+  height: 300px;
+}
+
 .logo {
   width: 35px;
 }
@@ -124,6 +128,32 @@ a {
   font-size: 12px;
 }
 
+.home-card-img-top {
+  height: 100%;
+}
+
+.home-card-title {
+  position: relative;
+  background-color: #F7F7F7;
+  padding-right: 15px;
+  text-transform: uppercase;
+  letter-spacing: 0.15rem;
+  font-size: 12px;
+}
+
+.home-card-title h2 {
+  width: 100%;
+  position: absolute;
+  background-color: #F7F7F7;
+  bottom: 0px;
+  font-size: 18px;
+  font-weight: 650;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  padding: 13px;
+  margin-bottom: 0px
+}
+
 .dash-card-title h2 {
   font-size: 18px;
   font-weight: 650;
@@ -138,12 +168,11 @@ a {
 }
 
 .dash-card-home-image {
-  padding: 0px;
+  height: 100%;
   overflow: hidden;
 }
 
 .dash-card-home-image img {
-  height: 250px;
   object-fit: cover;
 }
 
