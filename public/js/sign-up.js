@@ -21,7 +21,7 @@ const submitFormHandler = async (event) => {
     });
 
     if (response.ok) {
-      document.location.replace("/");
+      document.location.replace("/?m=1");
     } else {
       alert(response.statusText);
     }

@@ -61,21 +61,18 @@ Incorrect email address or password
 
 var welcomeModal = `<div class="modal-dialog">
 <div class="modal-content">
+<div class="modal-header" style="padding: 0; overflow: hidden;">
+        <img class="img-fluid"
+          src="/images/welcome-banner.jpeg">
+</div>
   <div class="modal-body">
-    <div class="row">
-      <div class="col">
-        <img class="img-fluid mt-5" style="padding-left: 50px; padding-right: 50px;"
-          src="/images/tenantively-logo-dark.png">
-      </div>
-      <hr class="mb-5 mt-5">
-    </div>
     <h1 id="modal-title">Welcome to Tenantive.ly!</h1>
     <p class="modal-message">Tenantive.ly connects you and your properties with potential tenants with robust communication
       tools each step of the way. <br><br>Next, list your property and lead the industry to a new generation of Landlords.</p>
   </div>
   <div class="modal-footer">
     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-    <button type="button" class="btn btn-primary">Add a Property</button>
+    <a href="/dashboard/add-property"<button type="button" class="btn btn-primary">Add a Property</button></a>
   </div>
 </div>
 
