@@ -25,6 +25,27 @@ a {
   padding-top: 20px;
 }
 
+.err {
+  text-align: center;
+  margin-right: auto;
+  margin-left: auto;
+  width: 300px;
+}
+
+.err-image {
+  padding-top: 100px;
+  text-align: center;
+  background-color: #31404C;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+
+
+.err-image img {
+  width: 800px;
+}
+
 .nav-container {
   color: #0c4279;
   display: flex;
@@ -252,4 +273,9 @@ a {
 
 .insights-list ul li {
   padding-left: 10px;
+}
+
+.errtext h1, p, h2, a {
+  color: white;
+  text-align: center;
 }
