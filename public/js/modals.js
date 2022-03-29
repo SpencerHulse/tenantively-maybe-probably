@@ -1,52 +1,48 @@
-console.log("hello")
 function showToasts() {
-    const address = window.location.href;
-    const splittedAddress = address.split('t=');
-    // Deleted - toast
-    if (splittedAddress[1] === "delete") {
-        document.getElementById("myToast").innerHTML = deleteToast;
-        $("#myToast").toast("show");
-    }
+  const address = window.location.href;
+  const splittedAddress = address.split("t=");
+  // Deleted - toast
+  if (splittedAddress[1] === "delete") {
+    document.getElementById("myToast").innerHTML = deleteToast;
+    $("#myToast").toast("show");
+  }
 
-    // Created - toast
-    if (splittedAddress[1] === "create") {
-        document.getElementById("myToast").innerHTML = createToast;
-        $("#myToast").toast("show");
-    }
+  // Created - toast
+  if (splittedAddress[1] === "create") {
+    document.getElementById("myToast").innerHTML = createToast;
+    $("#myToast").toast("show");
+  }
 
-    // Edit - toast
-    if (splittedAddress[1] === "edit") {
-        document.getElementById("myToast").innerHTML = editToast;
-        $("#myToast").toast("show");
-    }
-
+  // Edit - toast
+  if (splittedAddress[1] === "edit") {
+    document.getElementById("myToast").innerHTML = editToast;
+    $("#myToast").toast("show");
+  }
 }
 
 function showModals() {
-    const address = window.location.href;
-    const splittedAddress = address.split('m=');
-    if (splittedAddress[1] === "1") {
+  const address = window.location.href;
+  const splittedAddress = address.split("m=");
+  if (splittedAddress[1] === "1") {
+    document.getElementById("myModal").innerHTML = welcomeModal;
 
-        document.getElementById("myModal").innerHTML = welcomeModal;
-
-        $(document).ready(function () {
-            $("#myModal").modal();
-        });
-
-    }
+    $(document).ready(function () {
+      $("#myModal").modal();
+    });
+  }
 }
 
 var deleteToast = `<div class="toast-body">
 The property was removed successfully.
-</div>`
+</div>`;
 
 var createToast = `<div class="toast-body">
 The property was successfully created.
-</div>`
+</div>`;
 
 var editToast = `<div class="toast-body">
 The edited property was successfully saved.
-</div>`
+</div>`;
 
 var welcomeModal = `<div class="modal-dialog">
 <div class="modal-content">
@@ -68,9 +64,7 @@ var welcomeModal = `<div class="modal-dialog">
   </div>
 </div>
 
-</div>`
-
-
+</div>`;
 
 showModals();
 showToasts();

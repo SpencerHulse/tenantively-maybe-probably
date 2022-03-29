@@ -48,28 +48,49 @@ const newProperty = async (event) => {
       headers: { "Content-Type": "application/json" },
     });
 
-    // Will need to adjust this if we add another request for amenities!
-    if (response.ok) {
-      window.location.replace("/dashboard");
-    } else {
+    if (!response.ok) {
       alert(response.statusText);
     }
 
     /*  The below code allows you to get the ID of the property just made.
     It works because there is a custom get route that grabs the property created most recently.
     The way it targets the user is through session user_id data.
-    Therefore, it gets the property ID of the newest property for use when adding amenities.
+    Therefore, it gets the property ID of the newest property for use when adding amenities.*/
 
-  let newPropertyID;
+    let property_id;
+    const parking = document.getElementById("property-parking").value.trim();
+    const laundry = document.getElementById("property-laundry-room").checked;
+    const pets = document.getElementById("property-pets").checked;
+    const pool = document.getElementById("property-pool").checked;
 
-  const getPropertyResponse = await fetch(`/api/properties/new-property`, {
-    method: "GET",
-    headers: { "Content-Type": "application/json" },
-  })
-    .then((response) => response.json())
-    .then((data) => (newPropertyID = data[0].id));
+    const getPropertyResponse = await fetch(`/api/properties/new-property`, {
+      method: "GET",
+      headers: { "Content-Type": "application/json" },
+    })
+      .then((response) => response.json())
+      .then((data) => (property_id = data[0].id));
 
-  console.log(newPropertyID); */
+    if (!getPropertyResponse) {
+      alert(getPropertyResponse.statusText);
+    }
+
+    const amenitiesResponse = await fetch(`/api/amenities`, {
+      method: "POST",
+      body: JSON.stringify({
+        property_id,
+        laundry,
+        pets,
+        pool,
+        parking,
+      }),
+      headers: { "Content-Type": "application/json" },
+    });
+
+    if (amenitiesResponse.ok) {
+      window.location.replace("/?t=create");
+    } else {
+      alert(amenitiesResponse.statusText);
+    }
   }
 };
 
