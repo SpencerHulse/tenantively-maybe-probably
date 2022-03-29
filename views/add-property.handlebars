@@ -23,7 +23,7 @@
       <div class="col">
         <div class="container dash-menu d-flex">
 
-          <a href="./index.html">
+          <a href="/">
             <img class="logo" src="/images/tenantively-icon-white.png" alt="">
           </a>
 
@@ -105,10 +105,6 @@
                     <label for="property-type" class="form-label">Property Type</label>
                     <input type="text" class="form-control" id="property-type">
                 </div>
-                <div class="mb-3">
-                    <label for="property-description" class="form-label">Description</label>
-                    <textarea id="property-description" cols="30" rows="10" class="form-control"></textarea>
-                </div>
                 <p>Amenities</p>
                 <div class="btn-group mb-3" role="group" aria-label="Basic checkbox toggle button group">
                   <input type="checkbox" class="btn-check" id="property-laundry-room" autocomplete="off">
@@ -123,6 +119,10 @@
                 <div class="mb-3">
                   <label for="property-parking" class="form-label">Describe the parking</label>
                   <input type="text" class="form-control" id="property-parking" value="{{property.amenity.parking}}" />
+                </div>
+                <div class="mb-3">
+                    <label for="property-description" class="form-label">Description</label>
+                    <textarea id="property-description" cols="30" rows="10" class="form-control"></textarea>
                 </div>
 
                 <button type="submit" class="btn btn-primary" id="submit-new-property">Add property</button>
