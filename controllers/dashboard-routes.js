@@ -33,6 +33,7 @@ router.get("/", withAuth, (req, res) => {
       res.render("dashboard", {
         properties,
         loggedIn: req.session.loggedIn,
+        username: req.session.username,
       });
     })
     .catch((err) => {

@@ -20,6 +20,7 @@ const updatePropertyHandler = async (event) => {
   const availability = document
     .getElementById("property-availability")
     .value.trim();
+  const property_type = document.getElementById("property-type").value.trim();
   const description = document
     .getElementById("property-description")
     .value.trim();
@@ -32,7 +33,8 @@ const updatePropertyHandler = async (event) => {
     bedrooms &&
     bathrooms &&
     availability &&
-    description
+    description &&
+    property_type
   ) {
     const response = await fetch(`/api/properties/${id}`, {
       method: "PUT",
@@ -45,6 +47,7 @@ const updatePropertyHandler = async (event) => {
         bathrooms,
         availability,
         description,
+        property_type,
       }),
       headers: { "Content-Type": "application/json" },
     });

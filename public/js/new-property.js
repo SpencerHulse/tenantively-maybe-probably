@@ -87,7 +87,7 @@ const newProperty = async (event) => {
     });
 
     if (amenitiesResponse.ok) {
-      window.location.replace("/?t=create");
+      window.location.replace("/dashboard/?t=create");
     } else {
       alert(amenitiesResponse.statusText);
     }
