@@ -17,7 +17,16 @@ const submitFormHandler = async (event) => {
     if (response.ok) {
       document.location.replace("/");
     } else {
-      alert(response.statusText);
+      var loginErr = `
+<div class="toast-header bg-danger">
+<strong class="me-auto text-white">Login error</strong>
+</div>
+<div class="toast-body">
+Incorrect email address or password
+</div>`;
+
+      document.getElementById("myToast").innerHTML = loginErr;
+      $("#myToast").toast("show");
     }
   }
 };

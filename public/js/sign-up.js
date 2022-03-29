@@ -23,7 +23,18 @@ const submitFormHandler = async (event) => {
     if (response.ok) {
       document.location.replace("/?m=1");
     } else {
-      alert(response.statusText);
+     
+      var signupErr = `
+      <div class="toast-header bg-danger">
+      <strong class="me-auto text-white">Sign up error</strong>
+      </div>
+      <div class="toast-body">
+      The username or email address is already in use.
+      </div>`;
+      
+            document.getElementById("myToast").innerHTML = signupErr;
+            $("#myToast").toast("show");
+
     }
   }
 };

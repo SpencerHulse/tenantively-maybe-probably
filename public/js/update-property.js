@@ -82,7 +82,7 @@ const updatePropertyHandler = async (event) => {
     }
   }
 
-  window.location.replace("/dashboard");
+  window.location.replace("/dashboard/?t=edit");
 };
 
 updateProperty.addEventListener("click", updatePropertyHandler);
@@ -102,7 +102,7 @@ const deletePropertyHandler = async (event) => {
   });
 
   if (response.ok) {
-    window.location.replace("/dashboard");
+    window.location.replace("/dashboard/?t=delete");
   } else {
     alert(response.statusText);
   }
