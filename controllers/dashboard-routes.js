@@ -71,6 +71,11 @@ router.get("/:id", withAuth, (req, res) => {
     },
   })
     .then((data) => {
+      if (!data) {
+        res.render("404");
+        return;
+      }
+
       /* Ensures that the user trying to edit the page is the user who owns the property */
       if (data.dataValues.user_id !== req.session.user_id) {
         res.redirect("/");
