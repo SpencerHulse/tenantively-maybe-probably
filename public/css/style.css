@@ -35,12 +35,10 @@ a {
 .err-image {
   padding-top: 100px;
   text-align: center;
-  background-color: #31404C;
+  background-color: #31404c;
   margin-right: auto;
   margin-left: auto;
 }
-
-
 
 .err-image img {
   width: 800px;
@@ -280,7 +278,14 @@ a {
   padding-left: 10px;
 }
 
-.errtext h1, .errtext p, .errtext h2, .errtext  a {
+.errtext h1,
+.errtext p,
+.errtext h2,
+.errtext a {
   color: white;
   text-align: center;
+}
+
+.greeting {
+  list-style-type: none;
 }
