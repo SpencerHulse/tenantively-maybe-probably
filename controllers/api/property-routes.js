@@ -2,10 +2,6 @@ const router = require("express").Router();
 const { Property, Amenities } = require("../../models");
 const withAuth = require("../../utils/auth.js");
 
-/* var Handlebars = require("handlebars");
-var MomentHandler = require("handlebars.moment");
-MomentHandler.registerHelpers(Handlebars); */
-
 // Find all properties - /api/properties
 router.get("/", (req, res) => {
   Property.findAll()
@@ -16,28 +12,31 @@ router.get("/", (req, res) => {
     });
 });
 
-// Find all properties by zipcode
+// Find all properties by zipcode - Used for sorting
 router.get("/filtered/:zip", (req, res) => {
   Property.findAll({
-    where: {zip_code: req.params.zip}
+    where: { zip_code: req.params.zip },
   })
-  .then(data => {
-    if(!data){
-      res.status(404).json({ message: "No property found in this zipcode"});
-      return;
-    }
-    res.status(200).json(data)
-  })
-  .catch(err => {
-    res.status(500).json(err)
-  })
-})
+    .then((data) => {
+      if (!data) {
+        res.status(404).json({ message: "No property found in this zipcode" });
+        return;
+      }
+
+      res.status(200).json(data);
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
 
 // Find the newest property of a user - /api/properties/new-property
-// Used for adding amenities to a property on the same form!
+// Used to create amenities for a property being created on the same form!
 router.get("/new-property", withAuth, (req, res) => {
   Property.findAll({
     where: { user_id: req.session.user_id },
+    /* Order and limit ensure only the newest property is selected */
     order: [["createdAt", "DESC"]],
     limit: 1,
   })

@@ -1,3 +1,4 @@
+// Handles the logout process
 const logoutBtn = document.getElementById("logout");
 
 const logoutHandler = async () => {

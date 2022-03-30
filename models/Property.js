@@ -1,6 +1,5 @@
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");
-var moment = require('moment');
 
 class Property extends Model {}
 
