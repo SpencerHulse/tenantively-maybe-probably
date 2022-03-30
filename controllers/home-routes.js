@@ -44,6 +44,7 @@ router.get("/filtered/:zip", (req, res) => {
       "property_image",
       "zip_code",
     ],
+    order: [["updatedAt", "DESC"]],
   })
     .then((data) => {
       if (!data) {
