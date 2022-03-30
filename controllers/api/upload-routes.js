@@ -60,7 +60,7 @@ router.post("/:id", upload.single("image"), async (req, res) => {
   });
 
   // Redirects to the dashboard
-  res.redirect("/dashboard");
+  res.redirect("/dashboard/?t=edit");
 });
 
 module.exports = router;
