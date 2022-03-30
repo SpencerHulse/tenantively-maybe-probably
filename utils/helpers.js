@@ -6,9 +6,66 @@ const format_date = (date) => {
   return `${month}/${day}/${year}`;
 };
 
+// Turns stored phone number into a dashed (xxx-xxx-xxxx) phone number format
+const format_phone = (phoneNumber) => {
+  return (
+    "(" +
+    phoneNumber.toString().slice(0, 3) +
+    ")-" +
+    phoneNumber.toString().slice(3, 6) +
+    "-" +
+    phoneNumber.toString().slice(6, 10)
+  );
+};
+
 // Helper for the dashboard plan costs form
 const cost_per_month = (listings) => {
   return listings * 90;
 };
 
-module.exports = { format_date, cost_per_month };
+// Helper to pluralize properties when needed for dashboard
+const pluralize_that_property = (numberOfProperties) => {
+  if (numberOfProperties === 1) {
+    return "property";
+  } else {
+    return "properties";
+  }
+};
+
+// Helper to pluralize listing when needed for dashboard
+const pluralize_that_listing = (numberOfListings) => {
+  if (numberOfListings === 1) {
+    return "listing";
+  } else {
+    return "listings";
+  }
+};
+
+// Helper to pluralize bedrooms when needed for single-property page
+const pluralize_those_bedrooms = (numberOfBedrooms) => {
+  if (numberOfBedrooms === 1) {
+    return "bedroom";
+  } else {
+    return "bedrooms";
+  }
+};
+
+// Helper to pluralize bathrooms when needed for single-property page
+const pluralize_those_bathrooms = (numberOfBathrooms) => {
+  // == because decimal datatype reads as string
+  if (numberOfBathrooms == 1) {
+    return "bathroom";
+  } else {
+    return "bathrooms";
+  }
+};
+
+module.exports = {
+  format_date,
+  format_phone,
+  cost_per_month,
+  pluralize_that_property,
+  pluralize_that_listing,
+  pluralize_those_bedrooms,
+  pluralize_those_bathrooms,
+};

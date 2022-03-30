@@ -43,9 +43,9 @@
               <p>{{properties.property_type}}
                 with
                 {{properties.bedrooms}}
-                bedrooms and
+                {{pluralize_those_bedrooms properties.bedrooms}} and
                 {{properties.bathrooms}}
-                bathrooms</p>
+                {{pluralize_those_bathrooms properties.bathrooms}}</p>
             </div>
             <div>
               <h2>$ {{properties.monthly_rent}} / month</h2>
@@ -69,8 +69,8 @@
                 </div>
                 <div class="dash-card-content insights-list">
                   <ul>
-                    <li>Bedrooms: {{properties.bedrooms}}</li>
-                    <li>Bathrooms: {{properties.bathrooms}}</li>
+                    <li>{{pluralize_those_bedrooms properties.bedrooms}}: {{properties.bedrooms}}</li>
+                    <li>{{pluralize_those_bathrooms properties.bathrooms}}: {{properties.bathrooms}}</li>
                     {{#if properties.amenity.pets}}
                     <li>Pets allowed</li>
                     {{/if}}
@@ -92,7 +92,7 @@
                 </div>
                 <div class="dash-card-content contact-list">
                   <p><strong>Email:</strong> {{properties.user.email}}</p>
-                  <p><strong>Phone:</strong> {{properties.user.phone}}</p>
+                  <p><strong>Phone:</strong> {{format_phone properties.user.phone}}</p>
                 </div>
               </div>
             </div>
